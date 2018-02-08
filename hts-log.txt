@@ -1,0 +1,129 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 05 Feb 2018 08:42:27 at https://app2.simpliroute.com/#/uprofile/info +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -WC2%Px%x%q0s2u1%h%B%s%uN0L0%I0p7DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://app2.simpliroute.com/#/uprofile/info -O1 "C:\Nova pasta\simpli api" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+08:42:33	Warning: 	Moved Permanently for https://app2.simpliroute.com/robots.txt
+08:42:33	Warning: 	File has moved from https://app2.simpliroute.com/robots.txt to http://app2.simpliroute.com/#/robots.txt
+08:42:58	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 44): https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:43:12	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link primary/robots.txt (from primary/primary)
+08:43:12	Warning: 	Retry after error -5 (Unable to get server's address: O nome solicitado é válido, mas não foram encont) at link primary/uprofile/info (from primary/primary)
+08:43:15	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 1564): fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:43:15	Warning: 	Warning: store text/css without scan: C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:43:16	Warning: 	Note: due to https://www.facebook.com remote robots.txt rules, links beginning with these path will be forbidden: / (see in the options to disable this)
+08:43:17	Error: 	"Interrupted transfer" (-4) after 2 retries at link https://maps.googleapis.com/robots.txt (from https://app2.simpliroute.com/)
+08:43:17	Warning: 	Note: due to https://maps.googleapis.com remote robots.txt rules, links beginning with these path will be forbidden: /maps/api/js/AuthenticationService.Authenticate, /maps/api/js/QuotaService.RecordEvent (see in the options to disable this)
+08:43:17	Warning: 	Retry after error -4 (Interrupted transfer) at link https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing (from https://app2.simpliroute.com/)
+08:43:17	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link primary/uprofile/info (from primary/primary)
+08:43:19	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:43:19	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (cached) (200), size 87362): https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:43:19	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link primary/uprofile/info (from primary/primary)
+08:43:19	Warning: 	HTML file (63339 bytes) retransferred due to lack of cache: https://js.stripe.com/v2/
+08:43:20	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://app2.simpliroute.com/assets/js/jquery.js
+08:43:21	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://app2.simpliroute.com/assets/js/Blob.js
+08:43:21	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://app2.simpliroute.com/assets/js/markerwithlabel.js
+08:43:22	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://app2.simpliroute.com/env.js
+08:43:22	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://app2.simpliroute.com/cleaner.config.js
+08:43:23	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://app2.simpliroute.com/scripts/vendor-c893226e45.js
+08:43:23	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://app2.simpliroute.com/scripts/app-50451bc874.js
+08:43:41	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:43:41	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (cached) (200), size 44): https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:43:50	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://app2.simpliroute.com/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?
+08:43:51	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://app2.simpliroute.com/assets/fonts/simplirouteicons.eot?
+08:43:54	Warning: 	Retry after error -4 (Interrupted transfer) at link https://www.googleadservices.com/pagead/conversion_async.js (from https://app2.simpliroute.com/)
+08:43:56	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link primary/uprofile/info (from primary/primary)
+08:43:58	Warning: 	Retry after error -4 (Connect Error) at link https://app2.simpliroute.com/img/flags.png (from https://app2.simpliroute.com/styles/vendor-af12bac8c4.css)
+08:43:58	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:43:58	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:43:58	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://www.googleadservices.com/pagead/conversion_async.js
+08:43:59	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:43:59	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:43:59	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:43:59	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:01	Error: 	"Interrupted transfer" (-4) after 2 retries at link https://fonts.googleapis.com/robots.txt (from https://app2.simpliroute.com/styles/app-5a27cc8577.css)
+08:44:01	Warning: 	Retry after error -4 (Interrupted transfer) at link https://fonts.googleapis.com/css?family=Roboto (from https://app2.simpliroute.com/styles/app-5a27cc8577.css)
+08:44:08	Error: 	Duplicate entry in hts_wait_delayed() cancelled: www.w3.org/2000/svg -> C:/Nova pasta/simpli api/W3_O/2000/SVG_2D.DEL.delayed
+08:44:08	Warning: 	link is probably looping, type unknown, aborting: www.w3.org/2000/svg
+08:44:08	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link primary/uprofile/info (from primary/primary)
+08:44:08	Warning: 	Moved Permanently for https://app2.simpliroute.com/img/flags.png
+08:44:08	Warning: 	Warning moved treated for https://app2.simpliroute.com/img/flags.png (real one is app2.simpliroute.com/#/img/flags.png)
+08:44:08	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:08	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:09	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:09	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:10	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:10	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:11	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:11	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:11	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:11	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:11	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:11	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:11	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:11	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:11	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:11	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:12	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:12	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:13	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:13	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:14	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:14	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:14	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:14	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:16	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:16	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:16	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:16	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:16	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:16	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:16	Warning: 	Retry after error -4 (Interrupted transfer) at link https://fonts.googleapis.com/css?family=Roboto (from https://app2.simpliroute.com/styles/app-5a27cc8577.css)
+08:44:16	Warning: 	Note: due to www.w3.org remote robots.txt rules, links beginning with these path will be forbidden: /*/wp-admin/, /*/wp-includes/, /*/wp-content/plugins/, /*/wp-content/cache/, /*/wp-content/themes/, /blog/*/trackback/, /blog/*/feed/, /blog/*/comments/, /blog/*/category/*/*, /blog/*/*/trackback/, /blog/*/*/feed/, /blog/*/*/comments/, /blog/*/*?, /community/trackback/, /community/feed/, /community/comments/, /community/category/*/*, /community/*/trackback/, /community/*/feed/, /community/*/comments/, /community/*/category/*/*, /community/*?, /Consortium/Offices/trackback/, /Consortium/Offices/feed/, /Consortium/Offices/comments/, /Consortium/Offices/category/*/*, /Consortium/Offices/*/trackback/, /Consortium/Offices/*/feed/, /Consortium/Offices/*/comments/, /Consortium/Offices/*?, /wiki/index.php?, /wiki/index.php/Help, /wiki/index.php/MediaWiki, /wiki/index.php/Special:, /wiki/index.php/Template, /wiki/skins/, /*/wiki/index.php?, /*/wiki/index.php/Help, /*/wiki/index.php/MediaWiki, /*/wiki/index.php/Special:, /*/wiki/index.php/Template, /2004/ontaria/basic, /Team/, /Project, /Web, /Systems, /Out-Of-Date, /2005/06/blog/, /2004/08/W3CTalks, /2007/11/Talks/search, /People/all/, /RDF/Validator/ARPServlet, /RDF/Validator/rdfval, /2003/03/Translations/byLanguage, /2003/03/Translations/byTechnology, /2005/11/Translations/Query, /2000/06/webdata/xslt, /2000/09/webdata/xslt, /2005/08/online_xslt/xslt, /Bugs/, /Search/Mail/Public/, /2006/02/chartergen, /2004/01/pp-impl, /Consortium/supporters, /2007/08/pyRdfa/, /2012/pyRdfa/extract, /WAI/PF/comments/, /participate/conferences.xml, /scripts/, /2005/01/yacker/, /2005/01/yacker?, /2003/09/nschecker?, /services, /*,* (see in the options to disable this)
+08:44:16	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 1503): www.w3.org/2000/svg
+08:44:16	Warning: 	Warning: store text/html without scan: C:/Nova pasta/simpli api/W3_O/2000/SVG_2D.DEL.delayed
+08:44:16	Warning: 	Moved Permanently for app2.simpliroute.com/#/img/flags.png
+08:44:16	Warning: 	Redirected link is identical because of 'URL Hack' option: app2.simpliroute.com/#/img/flags.png and https://app2.simpliroute.com/#/img/flags.png
+08:44:16	Warning: 	Warning moved treated for app2.simpliroute.com/#/img/flags.png (real one is https://app2.simpliroute.com/#/img/flags.png)
+08:44:16	Error: 	Duplicate entry in hts_wait_delayed() cancelled: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700 -> C:/Nova pasta/simpli api/FONTS_GO/CSS_1BCC.DEL.delayed
+08:44:16	Warning: 	link is probably looping, type unknown, aborting: fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700italic,700
+08:44:17	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1 -> C:/Nova pasta/simpli api/FACEBOOK/TR_5042B.DEL.delayed
+08:44:17	Warning: 	link is probably looping, type unknown, aborting: https://www.facebook.com/tr?id=1213080102071293&ev=PageView&noscript=1
+08:44:17	Error: 	Duplicate entry in hts_wait_delayed() cancelled: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing -> C:/Nova pasta/simpli api/MAPS_GOO/MAPS/API/JS_9C73C.DEL.delayed
+08:44:17	Warning: 	link is probably looping, type unknown, aborting: https://maps.googleapis.com/maps/api/js?key=AIzaSyB8B04MTIk7abJDVESr6SUF6f3Hgt1DPAY&libraries=places,geometry,drawing
+08:44:18	Error: 	Exit requested by shell or user
+08:44:18	Warning: 	File not added due to mirror cancel: https://app2.simpliroute.com/#/img/styles/styles/scripts/vendor-c893226e45.js
+08:44:18	Warning: 	File not added due to mirror cancel: https://app2.simpliroute.com/#/img/styles/styles/scripts/vendor-c893226e45.js
+08:44:18	Warning: 	File not added due to mirror cancel: https://app2.simpliroute.com/#/img/styles/styles/scripts/vendor-c893226e45.js
+08:44:18	Warning: 	File not added due to mirror cancel: https://app2.simpliroute.com/#/img/styles/styles/scripts/vendor-c893226e45.js
+08:44:18	Error: 	"Interrupted transfer" (-4) after 2 retries at link https://fonts.googleapis.com/css?family=Roboto (from https://app2.simpliroute.com/styles/app-5a27cc8577.css)
+08:44:18	Error: 	"mirror stopped by user" (-1) at link https://app2.simpliroute.com/#/img/styles/styles/scripts/vendor-c893226e45.js (from https://app2.simpliroute.com/#/img/styles/styles/vendor-af12bac8c4.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 51 seconds : 98 links scanned, 88 files written (15046857 bytes overall) [10630477 bytes received at 95770 bytes/sec], 6578161 bytes transferred using HTTP compression in 9 files, ratio 32%, 1.0 requests per connection
+(42 errors, 76 warnings, 0 messages)
