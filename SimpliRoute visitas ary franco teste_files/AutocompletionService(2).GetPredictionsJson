@@ -1,0 +1,51 @@
+/**/_xdc_._exu9po && _xdc_._exu9po( {
+   "predictions" : [
+      {
+         "description" : "Avenida Ministro Ary Franco - Bangu, Rio de Janeiro - RJ, Brasil",
+         "id" : "43a38b5892021ef80657bcb9b3a5b95bec7345cc",
+         "matched_substrings" : [
+            {
+               "length" : 10,
+               "offset" : 17
+            }
+         ],
+         "place_id" : "EkBBdmVuaWRhIE1pbmlzdHJvIEFyeSBGcmFuY28gLSBCYW5ndSwgUmlvIGRlIEphbmVpcm8gLSBSSiwgQnJhc2ls",
+         "reference" : "ClREAAAA09eiIZ9cR3M8ezOjiqFi7PInfv5lPZzKzSKDwgP9gGWzdtlhyriRFEmNBO2SGZSBZJm5rIftrF96kEqqy0amCVKcr6YMP7niY-OgfFjV4xQSEGIbf4O3pfvafAnKjLSs9mYaFE_Kk__cR9JMeOslDVgrcht4Etvv",
+         "structured_formatting" : {
+            "main_text" : "Avenida Ministro Ary Franco",
+            "main_text_matched_substrings" : [
+               {
+                  "length" : 10,
+                  "offset" : 17
+               }
+            ],
+            "secondary_text" : "Bangu, Rio de Janeiro - RJ, Brasil"
+         },
+         "terms" : [
+            {
+               "offset" : 0,
+               "value" : "Avenida Ministro Ary Franco"
+            },
+            {
+               "offset" : 30,
+               "value" : "Bangu"
+            },
+            {
+               "offset" : 37,
+               "value" : "Rio de Janeiro"
+            },
+            {
+               "offset" : 54,
+               "value" : "RJ"
+            },
+            {
+               "offset" : 58,
+               "value" : "Brasil"
+            }
+         ],
+         "types" : [ "route", "geocode" ]
+      }
+   ],
+   "status" : "OK"
+}
+ )
