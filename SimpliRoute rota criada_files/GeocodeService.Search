@@ -1,0 +1,911 @@
+/**/_xdc_._t5k724 && _xdc_._t5k724( {
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "8-18",
+               "short_name" : "8-18",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Avenida Guianas",
+               "short_name" : "Av. Guianas",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "21853",
+               "short_name" : "21853",
+               "types" : [ "postal_code", "postal_code_prefix" ]
+            }
+         ],
+         "formatted_address" : "Av. Guianas, 8-18 - Bangu, Rio de Janeiro - RJ, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.8535923,
+                  "lng" : -43.4929818
+               },
+               "southwest" : {
+                  "lat" : -22.8545113,
+                  "lng" : -43.4932606
+               }
+            },
+            "location" : {
+               "lat" : -22.8540059,
+               "lng" : -43.4931258
+            },
+            "location_type" : "RANGE_INTERPOLATED",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.8527028197085,
+                  "lng" : -43.4917722197085
+               },
+               "southwest" : {
+                  "lat" : -22.8554007802915,
+                  "lng" : -43.4944701802915
+               }
+            }
+         },
+         "place_id" : "EjZBdi4gR3VpYW5hcywgOC0xOCAtIEJhbmd1LCBSaW8gZGUgSmFuZWlybyAtIFJKLCBCcmFzaWw",
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Avenida Alfredo Albuquerque próximo ao 40-42",
+               "short_name" : "Avenida Alfredo Albuquerque próximo ao 40-42",
+               "types" : [
+                  "bus_station",
+                  "establishment",
+                  "point_of_interest",
+                  "transit_station"
+               ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "21852-370",
+               "short_name" : "21852-370",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "Avenida Alfredo Albuquerque próximo ao 40-42 - Bangu, Rio de Janeiro - RJ, 21852-370, Brasil",
+         "geometry" : {
+            "location" : {
+               "lat" : -22.854288,
+               "lng" : -43.4923417
+            },
+            "location_type" : "GEOMETRIC_CENTER",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.8529390197085,
+                  "lng" : -43.4909927197085
+               },
+               "southwest" : {
+                  "lat" : -22.8556369802915,
+                  "lng" : -43.49369068029149
+               }
+            }
+         },
+         "place_id" : "ChIJD1DwyPlfmQARqi5PbB59KLY",
+         "types" : [
+            "bus_station",
+            "establishment",
+            "point_of_interest",
+            "transit_station"
+         ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Bangu, Rio de Janeiro - RJ, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.8161346,
+                  "lng" : -43.4490507
+               },
+               "southwest" : {
+                  "lat" : -22.9142916,
+                  "lng" : -43.527153
+               }
+            },
+            "location" : {
+               "lat" : -22.8742263,
+               "lng" : -43.4685442
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.8161346,
+                  "lng" : -43.4490507
+               },
+               "southwest" : {
+                  "lat" : -22.9142916,
+                  "lng" : -43.527153
+               }
+            }
+         },
+         "place_id" : "ChIJv57LowbgmwARSru6Do2Qf-s",
+         "types" : [ "political", "sublocality", "sublocality_level_1" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Rio de Janeiro, RJ, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.7460327,
+                  "lng" : -43.0969042
+               },
+               "southwest" : {
+                  "lat" : -23.0822288,
+                  "lng" : -43.7950599
+               }
+            },
+            "location" : {
+               "lat" : -22.9068467,
+               "lng" : -43.1728965
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.7460327,
+                  "lng" : -43.0969042
+               },
+               "southwest" : {
+                  "lat" : -23.0822288,
+                  "lng" : -43.7950599
+               }
+            }
+         },
+         "place_id" : "ChIJW6AIkVXemwARTtIvZ2xC3FA",
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "21853-070",
+               "short_name" : "21853-070",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Bangu, Rio de Janeiro - RJ, 21853-070, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.852461,
+                  "lng" : -43.4897546
+               },
+               "southwest" : {
+                  "lat" : -22.855248,
+                  "lng" : -43.4933641
+               }
+            },
+            "location" : {
+               "lat" : -22.8539616,
+               "lng" : -43.4923484
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.852461,
+                  "lng" : -43.4897546
+               },
+               "southwest" : {
+                  "lat" : -22.855248,
+                  "lng" : -43.4933641
+               }
+            }
+         },
+         "place_id" : "ChIJP-xNmPlfmQARGzuc07j9QHY",
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "21853-080",
+               "short_name" : "21853-080",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Bangu, Rio de Janeiro - RJ, 21853-080, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.8520526,
+                  "lng" : -43.4897546
+               },
+               "southwest" : {
+                  "lat" : -22.8548396,
+                  "lng" : -43.4933641
+               }
+            },
+            "location" : {
+               "lat" : -22.8536282,
+               "lng" : -43.4924331
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.8520526,
+                  "lng" : -43.4897546
+               },
+               "southwest" : {
+                  "lat" : -22.8548396,
+                  "lng" : -43.4933641
+               }
+            }
+         },
+         "place_id" : "ChIJmb59mvlfmQAR9BTSpn7s2qw",
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "21853-430",
+               "short_name" : "21853-430",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Bangu, Rio de Janeiro - RJ, 21853-430, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.8504546,
+                  "lng" : -43.4921611
+               },
+               "southwest" : {
+                  "lat" : -22.8560289,
+                  "lng" : -43.4945674
+               }
+            },
+            "location" : {
+               "lat" : -22.8544824,
+               "lng" : -43.49298220000001
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.8504546,
+                  "lng" : -43.4920152697085
+               },
+               "southwest" : {
+                  "lat" : -22.8560289,
+                  "lng" : -43.4947132302915
+               }
+            }
+         },
+         "place_id" : "ChIJL-mGK_hfmQARf_Mb33B0j9o",
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "21853-420",
+               "short_name" : "21853-420",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Bangu, Rio de Janeiro - RJ, 21853-420, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.8492653,
+                  "lng" : -43.4921611
+               },
+               "southwest" : {
+                  "lat" : -22.8548396,
+                  "lng" : -43.4945674
+               }
+            },
+            "location" : {
+               "lat" : -22.8520416,
+               "lng" : -43.4932198
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.8492653,
+                  "lng" : -43.4920152697085
+               },
+               "southwest" : {
+                  "lat" : -22.8548396,
+                  "lng" : -43.4947132302915
+               }
+            }
+         },
+         "place_id" : "ChIJZ4_yp_BfmQARZpxOYmFSagw",
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "21852-400",
+               "short_name" : "21852-400",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Bangu, Rio de Janeiro - RJ, 21852-400, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.8532419,
+                  "lng" : -43.4897546
+               },
+               "southwest" : {
+                  "lat" : -22.8568096,
+                  "lng" : -43.4957705
+               }
+            },
+            "location" : {
+               "lat" : -22.854687,
+               "lng" : -43.4921717
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.8532419,
+                  "lng" : -43.4897546
+               },
+               "southwest" : {
+                  "lat" : -22.8568096,
+                  "lng" : -43.4957705
+               }
+            }
+         },
+         "place_id" : "ChIJEcDzh_dfmQARqndW0weVb60",
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "21853-370",
+               "short_name" : "21853-370",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Bangu, Rio de Janeiro - RJ, 21853-370, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.8480762,
+                  "lng" : -43.4909579
+               },
+               "southwest" : {
+                  "lat" : -22.8564373,
+                  "lng" : -43.4945674
+               }
+            },
+            "location" : {
+               "lat" : -22.8522634,
+               "lng" : -43.4927929
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.8480762,
+                  "lng" : -43.4909579
+               },
+               "southwest" : {
+                  "lat" : -22.8564373,
+                  "lng" : -43.4945674
+               }
+            }
+         },
+         "place_id" : "ChIJ9e7cgfBfmQARu6YxUWlWf2k",
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "21852-370",
+               "short_name" : "21852-370",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Bangu, Rio de Janeiro - RJ, 21852-370, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.852461,
+                  "lng" : -43.4897546
+               },
+               "southwest" : {
+                  "lat" : -22.8564011,
+                  "lng" : -43.4957705
+               }
+            },
+            "location" : {
+               "lat" : -22.8545814,
+               "lng" : -43.4934251
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.852461,
+                  "lng" : -43.4897546
+               },
+               "southwest" : {
+                  "lat" : -22.8564011,
+                  "lng" : -43.4957705
+               }
+            }
+         },
+         "place_id" : "ChIJJzGxo_lfmQARhss9Ew1yCa0",
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "21853",
+               "short_name" : "21853",
+               "types" : [ "postal_code", "postal_code_prefix" ]
+            },
+            {
+               "long_name" : "Bangu",
+               "short_name" : "Bangu",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Bangu, Rio de Janeiro - RJ, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.8160326,
+                  "lng" : -43.4843534
+               },
+               "southwest" : {
+                  "lat" : -22.856926,
+                  "lng" : -43.5168647
+               }
+            },
+            "location" : {
+               "lat" : -22.8409047,
+               "lng" : -43.4981765
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.8160326,
+                  "lng" : -43.4843534
+               },
+               "southwest" : {
+                  "lat" : -22.856926,
+                  "lng" : -43.5168647
+               }
+            }
+         },
+         "place_id" : "ChIJ5QyviupfmQARwJcUIHHfWxE",
+         "types" : [ "postal_code", "postal_code_prefix" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "Rio de Janeiro",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Rio de Janeiro - RJ, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -22.7460545,
+                  "lng" : -43.0990393
+               },
+               "southwest" : {
+                  "lat" : -23.0828927,
+                  "lng" : -43.7965385
+               }
+            },
+            "location" : {
+               "lat" : -22.9083081,
+               "lng" : -43.1970258
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -22.7460545,
+                  "lng" : -43.0990393
+               },
+               "southwest" : {
+                  "lat" : -23.0828927,
+                  "lng" : -43.7965385
+               }
+            }
+         },
+         "place_id" : "ChIJC7UkQv5-mQAR7llshDwliPk",
+         "types" : [ "administrative_area_level_2", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Rio de Janeiro",
+               "short_name" : "RJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Rio de Janeiro, Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : -20.7632054,
+                  "lng" : -40.9568207
+               },
+               "southwest" : {
+                  "lat" : -23.3689318,
+                  "lng" : -44.8893205
+               }
+            },
+            "location" : {
+               "lat" : -22.9098755,
+               "lng" : -43.2094971
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : -20.7632054,
+                  "lng" : -40.9568207
+               },
+               "southwest" : {
+                  "lat" : -23.3689318,
+                  "lng" : -44.8893205
+               }
+            }
+         },
+         "place_id" : "ChIJw4riypQYmAAR0IMFwRrDSQM",
+         "types" : [ "administrative_area_level_1", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Brasil",
+               "short_name" : "BR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Brasil",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 5.2717863,
+                  "lng" : -28.650543
+               },
+               "southwest" : {
+                  "lat" : -34.0891,
+                  "lng" : -73.982817
+               }
+            },
+            "location" : {
+               "lat" : -14.235004,
+               "lng" : -51.92528
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 5.2717863,
+                  "lng" : -28.650543
+               },
+               "southwest" : {
+                  "lat" : -34.0891,
+                  "lng" : -73.982817
+               }
+            }
+         },
+         "place_id" : "ChIJzyjM68dZnAARYz4p8gYVWik",
+         "types" : [ "country", "political" ]
+      }
+   ],
+   "status" : "OK"
+}
+ )
