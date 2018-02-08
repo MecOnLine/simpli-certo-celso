@@ -1,0 +1,3401 @@
+(function (window) {
+  window.CLEANER_CONFIG = window.CLEANER_CONFIG || {};
+
+  var base64map = "eyLDgSI6IkEiLCLEgiI6IkEiLCLhuq4iOiJBIiwi4bq2IjoiQSIsIuG6sCI6IkEiLCLhurIiOiJBIiwi4bq0IjoiQSIsIseNIjoiQSIsIsOCIjoiQSIsIuG6pCI6IkEiLCLhuqwiOiJBIiwi4bqmIjoiQSIsIuG6qCI6IkEiLCLhuqoiOiJBIiwiw4QiOiJBIiwix54iOiJBIiwiyKYiOiJBIiwix6AiOiJBIiwi4bqgIjoiQSIsIsiAIjoiQSIsIsOAIjoiQSIsIuG6oiI6IkEiLCLIgiI6IkEiLCLEgCI6IkEiLCLEhCI6IkEiLCLDhSI6IkEiLCLHuiI6IkEiLCLhuIAiOiJBIiwiyLoiOiJBIiwiw4MiOiJBIiwi6pyyIjoiQUEiLCLDhiI6IkFFIiwix7wiOiJBRSIsIseiIjoiQUUiLCLqnLQiOiJBTyIsIuqctiI6IkFVIiwi6py4IjoiQVYiLCLqnLoiOiJBViIsIuqcvCI6IkFZIiwi4biCIjoiQiIsIuG4hCI6IkIiLCLGgSI6IkIiLCLhuIYiOiJCIiwiyYMiOiJCIiwixoIiOiJCIiwixIYiOiJDIiwixIwiOiJDIiwiw4ciOiJDIiwi4biIIjoiQyIsIsSIIjoiQyIsIsSKIjoiQyIsIsaHIjoiQyIsIsi7IjoiQyIsIsSOIjoiRCIsIuG4kCI6IkQiLCLhuJIiOiJEIiwi4biKIjoiRCIsIuG4jCI6IkQiLCLGiiI6IkQiLCLhuI4iOiJEIiwix7IiOiJEIiwix4UiOiJEIiwixJAiOiJEIiwixosiOiJEIiwix7EiOiJEWiIsIseEIjoiRFoiLCLDiSI6IkUiLCLElCI6IkUiLCLEmiI6IkUiLCLIqCI6IkUiLCLhuJwiOiJFIiwiw4oiOiJFIiwi4bq+IjoiRSIsIuG7hiI6IkUiLCLhu4AiOiJFIiwi4buCIjoiRSIsIuG7hCI6IkUiLCLhuJgiOiJFIiwiw4siOiJFIiwixJYiOiJFIiwi4bq4IjoiRSIsIsiEIjoiRSIsIsOIIjoiRSIsIuG6uiI6IkUiLCLIhiI6IkUiLCLEkiI6IkUiLCLhuJYiOiJFIiwi4biUIjoiRSIsIsSYIjoiRSIsIsmGIjoiRSIsIuG6vCI6IkUiLCLhuJoiOiJFIiwi6p2qIjoiRVQiLCLhuJ4iOiJGIiwixpEiOiJGIiwix7QiOiJHIiwixJ4iOiJHIiwix6YiOiJHIiwixKIiOiJHIiwixJwiOiJHIiwixKAiOiJHIiwixpMiOiJHIiwi4bigIjoiRyIsIsekIjoiRyIsIuG4qiI6IkgiLCLIniI6IkgiLCLhuKgiOiJIIiwixKQiOiJIIiwi4rGnIjoiSCIsIuG4piI6IkgiLCLhuKIiOiJIIiwi4bikIjoiSCIsIsSmIjoiSCIsIsONIjoiSSIsIsSsIjoiSSIsIsePIjoiSSIsIsOOIjoiSSIsIsOPIjoiSSIsIuG4riI6IkkiLCLEsCI6IkkiLCLhu4oiOiJJIiwiyIgiOiJJIiwiw4wiOiJJIiwi4buIIjoiSSIsIsiKIjoiSSIsIsSqIjoiSSIsIsSuIjoiSSIsIsaXIjoiSSIsIsSoIjoiSSIsIuG4rCI6IkkiLCLqnbkiOiJEIiwi6p27IjoiRiIsIuqdvSI6IkciLCLqnoIiOiJSIiwi6p6EIjoiUyIsIuqehiI6IlQiLCLqnawiOiJJUyIsIsS0IjoiSiIsIsmIIjoiSiIsIuG4sCI6IksiLCLHqCI6IksiLCLEtiI6IksiLCLisakiOiJLIiwi6p2CIjoiSyIsIuG4siI6IksiLCLGmCI6IksiLCLhuLQiOiJLIiwi6p2AIjoiSyIsIuqdhCI6IksiLCLEuSI6IkwiLCLIvSI6IkwiLCLEvSI6IkwiLCLEuyI6IkwiLCLhuLwiOiJMIiwi4bi2IjoiTCIsIuG4uCI6IkwiLCLisaAiOiJMIiwi6p2IIjoiTCIsIuG4uiI6IkwiLCLEvyI6IkwiLCLisaIiOiJMIiwix4giOiJMIiwixYEiOiJMIiwix4ciOiJMSiIsIuG4viI6Ik0iLCLhuYAiOiJNIiwi4bmCIjoiTSIsIuKxriI6Ik0iLCLFgyI6Ik4iLCLFhyI6Ik4iLCLFhSI6Ik4iLCLhuYoiOiJOIiwi4bmEIjoiTiIsIuG5hiI6Ik4iLCLHuCI6Ik4iLCLGnSI6Ik4iLCLhuYgiOiJOIiwiyKAiOiJOIiwix4siOiJOIiwiw5EiOiJOIiwix4oiOiJOSiIsIsOTIjoiTyIsIsWOIjoiTyIsIseRIjoiTyIsIsOUIjoiTyIsIuG7kCI6Ik8iLCLhu5giOiJPIiwi4buSIjoiTyIsIuG7lCI6Ik8iLCLhu5YiOiJPIiwiw5YiOiJPIiwiyKoiOiJPIiwiyK4iOiJPIiwiyLAiOiJPIiwi4buMIjoiTyIsIsWQIjoiTyIsIsiMIjoiTyIsIsOSIjoiTyIsIuG7jiI6Ik8iLCLGoCI6Ik8iLCLhu5oiOiJPIiwi4buiIjoiTyIsIuG7nCI6Ik8iLCLhu54iOiJPIiwi4bugIjoiTyIsIsiOIjoiTyIsIuqdiiI6Ik8iLCLqnYwiOiJPIiwixYwiOiJPIiwi4bmSIjoiTyIsIuG5kCI6Ik8iLCLGnyI6Ik8iLCLHqiI6Ik8iLCLHrCI6Ik8iLCLDmCI6Ik8iLCLHviI6Ik8iLCLDlSI6Ik8iLCLhuYwiOiJPIiwi4bmOIjoiTyIsIsisIjoiTyIsIsaiIjoiT0kiLCLqnY4iOiJPTyIsIsaQIjoiRSIsIsaGIjoiTyIsIsiiIjoiT1UiLCLhuZQiOiJQIiwi4bmWIjoiUCIsIuqdkiI6IlAiLCLGpCI6IlAiLCLqnZQiOiJQIiwi4rGjIjoiUCIsIuqdkCI6IlAiLCLqnZgiOiJRIiwi6p2WIjoiUSIsIsWUIjoiUiIsIsWYIjoiUiIsIsWWIjoiUiIsIuG5mCI6IlIiLCLhuZoiOiJSIiwi4bmcIjoiUiIsIsiQIjoiUiIsIsiSIjoiUiIsIuG5niI6IlIiLCLJjCI6IlIiLCLisaQiOiJSIiwi6py+IjoiQyIsIsaOIjoiRSIsIsWaIjoiUyIsIuG5pCI6IlMiLCLFoCI6IlMiLCLhuaYiOiJTIiwixZ4iOiJTIiwixZwiOiJTIiwiyJgiOiJTIiwi4bmgIjoiUyIsIuG5oiI6IlMiLCLhuagiOiJTIiwixaQiOiJUIiwixaIiOiJUIiwi4bmwIjoiVCIsIsiaIjoiVCIsIsi+IjoiVCIsIuG5qiI6IlQiLCLhuawiOiJUIiwixqwiOiJUIiwi4bmuIjoiVCIsIsauIjoiVCIsIsWmIjoiVCIsIuKxryI6IkEiLCLqnoAiOiJMIiwixpwiOiJNIiwiyYUiOiJWIiwi6pyoIjoiVFoiLCLDmiI6IlUiLCLFrCI6IlUiLCLHkyI6IlUiLCLDmyI6IlUiLCLhubYiOiJVIiwiw5wiOiJVIiwix5ciOiJVIiwix5kiOiJVIiwix5siOiJVIiwix5UiOiJVIiwi4bmyIjoiVSIsIuG7pCI6IlUiLCLFsCI6IlUiLCLIlCI6IlUiLCLDmSI6IlUiLCLhu6YiOiJVIiwixq8iOiJVIiwi4buoIjoiVSIsIuG7sCI6IlUiLCLhu6oiOiJVIiwi4busIjoiVSIsIuG7riI6IlUiLCLIliI6IlUiLCLFqiI6IlUiLCLhuboiOiJVIiwixbIiOiJVIiwixa4iOiJVIiwixagiOiJVIiwi4bm4IjoiVSIsIuG5tCI6IlUiLCLqnZ4iOiJWIiwi4bm+IjoiViIsIsayIjoiViIsIuG5vCI6IlYiLCLqnaAiOiJWWSIsIuG6giI6IlciLCLFtCI6IlciLCLhuoQiOiJXIiwi4bqGIjoiVyIsIuG6iCI6IlciLCLhuoAiOiJXIiwi4rGyIjoiVyIsIuG6jCI6IlgiLCLhuooiOiJYIiwiw50iOiJZIiwixbYiOiJZIiwixbgiOiJZIiwi4bqOIjoiWSIsIuG7tCI6IlkiLCLhu7IiOiJZIiwixrMiOiJZIiwi4bu2IjoiWSIsIuG7viI6IlkiLCLIsiI6IlkiLCLJjiI6IlkiLCLhu7giOiJZIiwixbkiOiJaIiwixb0iOiJaIiwi4bqQIjoiWiIsIuKxqyI6IloiLCLFuyI6IloiLCLhupIiOiJaIiwiyKQiOiJaIiwi4bqUIjoiWiIsIsa1IjoiWiIsIsSyIjoiSUoiLCLFkiI6Ik9FIiwi4bSAIjoiQSIsIuG0gSI6IkFFIiwiypkiOiJCIiwi4bSDIjoiQiIsIuG0hCI6IkMiLCLhtIUiOiJEIiwi4bSHIjoiRSIsIuqcsCI6IkYiLCLJoiI6IkciLCLKmyI6IkciLCLKnCI6IkgiLCLJqiI6IkkiLCLKgSI6IlIiLCLhtIoiOiJKIiwi4bSLIjoiSyIsIsqfIjoiTCIsIuG0jCI6IkwiLCLhtI0iOiJNIiwiybQiOiJOIiwi4bSPIjoiTyIsIsm2IjoiT0UiLCLhtJAiOiJPIiwi4bSVIjoiT1UiLCLhtJgiOiJQIiwiyoAiOiJSIiwi4bSOIjoiTiIsIuG0mSI6IlIiLCLqnLEiOiJTIiwi4bSbIjoiVCIsIuKxuyI6IkUiLCLhtJoiOiJSIiwi4bScIjoiVSIsIuG0oCI6IlYiLCLhtKEiOiJXIiwiyo8iOiJZIiwi4bSiIjoiWiIsIsOhIjoiYSIsIsSDIjoiYSIsIuG6ryI6ImEiLCLhurciOiJhIiwi4bqxIjoiYSIsIuG6syI6ImEiLCLhurUiOiJhIiwix44iOiJhIiwiw6IiOiJhIiwi4bqlIjoiYSIsIuG6rSI6ImEiLCLhuqciOiJhIiwi4bqpIjoiYSIsIuG6qyI6ImEiLCLDpCI6ImEiLCLHnyI6ImEiLCLIpyI6ImEiLCLHoSI6ImEiLCLhuqEiOiJhIiwiyIEiOiJhIiwiw6AiOiJhIiwi4bqjIjoiYSIsIsiDIjoiYSIsIsSBIjoiYSIsIsSFIjoiYSIsIuG2jyI6ImEiLCLhupoiOiJhIiwiw6UiOiJhIiwix7siOiJhIiwi4biBIjoiYSIsIuKxpSI6ImEiLCLDoyI6ImEiLCLqnLMiOiJhYSIsIsOmIjoiYWUiLCLHvSI6ImFlIiwix6MiOiJhZSIsIuqctSI6ImFvIiwi6py3IjoiYXUiLCLqnLkiOiJhdiIsIuqcuyI6ImF2Iiwi6py9IjoiYXkiLCLhuIMiOiJiIiwi4biFIjoiYiIsIsmTIjoiYiIsIuG4hyI6ImIiLCLhtawiOiJiIiwi4baAIjoiYiIsIsaAIjoiYiIsIsaDIjoiYiIsIsm1IjoibyIsIsSHIjoiYyIsIsSNIjoiYyIsIsOnIjoiYyIsIuG4iSI6ImMiLCLEiSI6ImMiLCLJlSI6ImMiLCLEiyI6ImMiLCLGiCI6ImMiLCLIvCI6ImMiLCLEjyI6ImQiLCLhuJEiOiJkIiwi4biTIjoiZCIsIsihIjoiZCIsIuG4iyI6ImQiLCLhuI0iOiJkIiwiyZciOiJkIiwi4baRIjoiZCIsIuG4jyI6ImQiLCLhta0iOiJkIiwi4baBIjoiZCIsIsSRIjoiZCIsIsmWIjoiZCIsIsaMIjoiZCIsIsSxIjoiaSIsIsi3IjoiaiIsIsmfIjoiaiIsIsqEIjoiaiIsIsezIjoiZHoiLCLHhiI6ImR6Iiwiw6kiOiJlIiwixJUiOiJlIiwixJsiOiJlIiwiyKkiOiJlIiwi4bidIjoiZSIsIsOqIjoiZSIsIuG6vyI6ImUiLCLhu4ciOiJlIiwi4buBIjoiZSIsIuG7gyI6ImUiLCLhu4UiOiJlIiwi4biZIjoiZSIsIsOrIjoiZSIsIsSXIjoiZSIsIuG6uSI6ImUiLCLIhSI6ImUiLCLDqCI6ImUiLCLhursiOiJlIiwiyIciOiJlIiwixJMiOiJlIiwi4biXIjoiZSIsIuG4lSI6ImUiLCLisbgiOiJlIiwixJkiOiJlIiwi4baSIjoiZSIsIsmHIjoiZSIsIuG6vSI6ImUiLCLhuJsiOiJlIiwi6p2rIjoiZXQiLCLhuJ8iOiJmIiwixpIiOiJmIiwi4bWuIjoiZiIsIuG2giI6ImYiLCLHtSI6ImciLCLEnyI6ImciLCLHpyI6ImciLCLEoyI6ImciLCLEnSI6ImciLCLEoSI6ImciLCLJoCI6ImciLCLhuKEiOiJnIiwi4baDIjoiZyIsIselIjoiZyIsIuG4qyI6ImgiLCLInyI6ImgiLCLhuKkiOiJoIiwixKUiOiJoIiwi4rGoIjoiaCIsIuG4pyI6ImgiLCLhuKMiOiJoIiwi4bilIjoiaCIsIsmmIjoiaCIsIuG6liI6ImgiLCLEpyI6ImgiLCLGlSI6Imh2Iiwiw60iOiJpIiwixK0iOiJpIiwix5AiOiJpIiwiw64iOiJpIiwiw68iOiJpIiwi4bivIjoiaSIsIuG7iyI6ImkiLCLIiSI6ImkiLCLDrCI6ImkiLCLhu4kiOiJpIiwiyIsiOiJpIiwixKsiOiJpIiwixK8iOiJpIiwi4baWIjoiaSIsIsmoIjoiaSIsIsSpIjoiaSIsIuG4rSI6ImkiLCLqnboiOiJkIiwi6p28IjoiZiIsIuG1uSI6ImciLCLqnoMiOiJyIiwi6p6FIjoicyIsIuqehyI6InQiLCLqna0iOiJpcyIsIsewIjoiaiIsIsS1IjoiaiIsIsqdIjoiaiIsIsmJIjoiaiIsIuG4sSI6ImsiLCLHqSI6ImsiLCLEtyI6ImsiLCLisaoiOiJrIiwi6p2DIjoiayIsIuG4syI6ImsiLCLGmSI6ImsiLCLhuLUiOiJrIiwi4baEIjoiayIsIuqdgSI6ImsiLCLqnYUiOiJrIiwixLoiOiJsIiwixpoiOiJsIiwiyawiOiJsIiwixL4iOiJsIiwixLwiOiJsIiwi4bi9IjoibCIsIsi0IjoibCIsIuG4tyI6ImwiLCLhuLkiOiJsIiwi4rGhIjoibCIsIuqdiSI6ImwiLCLhuLsiOiJsIiwixYAiOiJsIiwiyasiOiJsIiwi4baFIjoibCIsIsmtIjoibCIsIsWCIjoibCIsIseJIjoibGoiLCLFvyI6InMiLCLhupwiOiJzIiwi4bqbIjoicyIsIuG6nSI6InMiLCLhuL8iOiJtIiwi4bmBIjoibSIsIuG5gyI6Im0iLCLJsSI6Im0iLCLhta8iOiJtIiwi4baGIjoibSIsIsWEIjoibiIsIsWIIjoibiIsIsWGIjoibiIsIuG5iyI6Im4iLCLItSI6Im4iLCLhuYUiOiJuIiwi4bmHIjoibiIsIse5IjoibiIsIsmyIjoibiIsIuG5iSI6Im4iLCLGniI6Im4iLCLhtbAiOiJuIiwi4baHIjoibiIsIsmzIjoibiIsIsOxIjoibiIsIseMIjoibmoiLCLDsyI6Im8iLCLFjyI6Im8iLCLHkiI6Im8iLCLDtCI6Im8iLCLhu5EiOiJvIiwi4buZIjoibyIsIuG7kyI6Im8iLCLhu5UiOiJvIiwi4buXIjoibyIsIsO2IjoibyIsIsirIjoibyIsIsivIjoibyIsIsixIjoibyIsIuG7jSI6Im8iLCLFkSI6Im8iLCLIjSI6Im8iLCLDsiI6Im8iLCLhu48iOiJvIiwixqEiOiJvIiwi4bubIjoibyIsIuG7oyI6Im8iLCLhu50iOiJvIiwi4bufIjoibyIsIuG7oSI6Im8iLCLIjyI6Im8iLCLqnYsiOiJvIiwi6p2NIjoibyIsIuKxuiI6Im8iLCLFjSI6Im8iLCLhuZMiOiJvIiwi4bmRIjoibyIsIserIjoibyIsIsetIjoibyIsIsO4IjoibyIsIse/IjoibyIsIsO1IjoibyIsIuG5jSI6Im8iLCLhuY8iOiJvIiwiyK0iOiJvIiwixqMiOiJvaSIsIuqdjyI6Im9vIiwiyZsiOiJlIiwi4baTIjoiZSIsIsmUIjoibyIsIuG2lyI6Im8iLCLIoyI6Im91Iiwi4bmVIjoicCIsIuG5lyI6InAiLCLqnZMiOiJwIiwixqUiOiJwIiwi4bWxIjoicCIsIuG2iCI6InAiLCLqnZUiOiJwIiwi4bW9IjoicCIsIuqdkSI6InAiLCLqnZkiOiJxIiwiyqAiOiJxIiwiyYsiOiJxIiwi6p2XIjoicSIsIsWVIjoiciIsIsWZIjoiciIsIsWXIjoiciIsIuG5mSI6InIiLCLhuZsiOiJyIiwi4bmdIjoiciIsIsiRIjoiciIsIsm+IjoiciIsIuG1syI6InIiLCLIkyI6InIiLCLhuZ8iOiJyIiwiybwiOiJyIiwi4bWyIjoiciIsIuG2iSI6InIiLCLJjSI6InIiLCLJvSI6InIiLCLihoQiOiJjIiwi6py/IjoiYyIsIsmYIjoiZSIsIsm/IjoiciIsIsWbIjoicyIsIuG5pSI6InMiLCLFoSI6InMiLCLhuaciOiJzIiwixZ8iOiJzIiwixZ0iOiJzIiwiyJkiOiJzIiwi4bmhIjoicyIsIuG5oyI6InMiLCLhuakiOiJzIiwiyoIiOiJzIiwi4bW0IjoicyIsIuG2iiI6InMiLCLIvyI6InMiLCLJoSI6ImciLCLhtJEiOiJvIiwi4bSTIjoibyIsIuG0nSI6InUiLCLFpSI6InQiLCLFoyI6InQiLCLhubEiOiJ0IiwiyJsiOiJ0IiwiyLYiOiJ0Iiwi4bqXIjoidCIsIuKxpiI6InQiLCLhuasiOiJ0Iiwi4bmtIjoidCIsIsatIjoidCIsIuG5ryI6InQiLCLhtbUiOiJ0IiwixqsiOiJ0IiwiyogiOiJ0IiwixaciOiJ0Iiwi4bW6IjoidGgiLCLJkCI6ImEiLCLhtIIiOiJhZSIsIsedIjoiZSIsIuG1tyI6ImciLCLJpSI6ImgiLCLKriI6ImgiLCLKryI6ImgiLCLhtIkiOiJpIiwiyp4iOiJrIiwi6p6BIjoibCIsIsmvIjoibSIsIsmwIjoibSIsIuG0lCI6Im9lIiwiybkiOiJyIiwiybsiOiJyIiwiyboiOiJyIiwi4rG5IjoiciIsIsqHIjoidCIsIsqMIjoidiIsIsqNIjoidyIsIsqOIjoieSIsIuqcqSI6InR6Iiwiw7oiOiJ1Iiwixa0iOiJ1Iiwix5QiOiJ1Iiwiw7siOiJ1Iiwi4bm3IjoidSIsIsO8IjoidSIsIseYIjoidSIsIseaIjoidSIsIsecIjoidSIsIseWIjoidSIsIuG5syI6InUiLCLhu6UiOiJ1IiwixbEiOiJ1IiwiyJUiOiJ1Iiwiw7kiOiJ1Iiwi4bunIjoidSIsIsawIjoidSIsIuG7qSI6InUiLCLhu7EiOiJ1Iiwi4burIjoidSIsIuG7rSI6InUiLCLhu68iOiJ1IiwiyJciOiJ1IiwixasiOiJ1Iiwi4bm7IjoidSIsIsWzIjoidSIsIuG2mSI6InUiLCLFryI6InUiLCLFqSI6InUiLCLhubkiOiJ1Iiwi4bm1IjoidSIsIuG1qyI6InVlIiwi6p24IjoidW0iLCLisbQiOiJ2Iiwi6p2fIjoidiIsIuG5vyI6InYiLCLKiyI6InYiLCLhtowiOiJ2Iiwi4rGxIjoidiIsIuG5vSI6InYiLCLqnaEiOiJ2eSIsIuG6gyI6InciLCLFtSI6InciLCLhuoUiOiJ3Iiwi4bqHIjoidyIsIuG6iSI6InciLCLhuoEiOiJ3Iiwi4rGzIjoidyIsIuG6mCI6InciLCLhuo0iOiJ4Iiwi4bqLIjoieCIsIuG2jSI6IngiLCLDvSI6InkiLCLFtyI6InkiLCLDvyI6InkiLCLhuo8iOiJ5Iiwi4bu1IjoieSIsIuG7syI6InkiLCLGtCI6InkiLCLhu7ciOiJ5Iiwi4bu/IjoieSIsIsizIjoieSIsIuG6mSI6InkiLCLJjyI6InkiLCLhu7kiOiJ5IiwixboiOiJ6Iiwixb4iOiJ6Iiwi4bqRIjoieiIsIsqRIjoieiIsIuKxrCI6InoiLCLFvCI6InoiLCLhupMiOiJ6IiwiyKUiOiJ6Iiwi4bqVIjoieiIsIuG1tiI6InoiLCLhto4iOiJ6IiwiypAiOiJ6IiwixrYiOiJ6IiwiyYAiOiJ6Iiwi76yAIjoiZmYiLCLvrIMiOiJmZmkiLCLvrIQiOiJmZmwiLCLvrIEiOiJmaSIsIu+sgiI6ImZsIiwixLMiOiJpaiIsIsWTIjoib2UiLCLvrIYiOiJzdCIsIuKCkCI6ImEiLCLigpEiOiJlIiwi4bWiIjoiaSIsIuKxvCI6ImoiLCLigpIiOiJvIiwi4bWjIjoiciIsIuG1pCI6InUiLCLhtaUiOiJ2Iiwi4oKTIjoieCJ9";
+  window.CLEANER_CONFIG = {
+    PE: {
+      centerOfCountry: {lat: -9.189967, lng: -75.015152},
+      specialChars: {
+        ',': ' ',
+        '.': ' ',
+        ':': ' ',
+        ';': ' ',
+        'ñ': 'n',
+        '/': ' ',
+        '\'': ' ',
+        '"': ' ',
+        '?': ' ',
+        '¿': ' ',
+        '!': ' ',
+        '|': ' ',
+        '¡': ' ',
+        '_': ' ',
+        '#': ' ',
+        '$': ' ',
+        '*': ' ',
+        '(': ' ',
+        ')': ' ',
+        '[': ' ',
+        ']': ' ',
+        '{': ' ',
+        '}': ' ',
+        '%': ' ',
+        '@': ' ',
+        '^': ' ',
+        '`': ' ',
+        '~': ' ',
+        '-': ' '
+      },
+      latinMap: JSON.parse(decodeURIComponent(escape(atob(base64map)))),
+      absoluteStopWords: [
+        'AAHH',
+        'Asentamiento Humano',
+        'AV',
+        'Avenida',
+        'CAL',
+        'Calle',
+        'CL',
+        'CLL',
+        'CLLE',
+        'Jiron',
+        'JR',
+        'JRN',
+        'JRON',
+        'NRO',
+        'Pasaje',
+        'PJ',
+        'PSJ',
+        'PSJE',
+        'S/N',
+        'SN'
+      ],
+      continuationStopWords: [
+        '1ER',
+        '2DO',
+        '3ER',
+        '4TO',
+        'Anexo',
+        'Apartamento',
+        'APT',
+        'ASOC',
+        'Asociacion',
+        'Block',
+        'Blok',
+        'Bloq',
+        'Bloque',
+        'Cdra',
+        'Cond',
+        'Condominio',
+        'Coop',
+        'Cooperativa',
+        'DEP',
+        'Departamento',
+        'Depto',
+        'DPO',
+        'DPT',
+        'DPTO',
+        'DTO',
+        'Edif',
+        'Edificio',
+        'Grupo',
+        'INT',
+        'Interior',
+        'KM',
+        'Ll',
+        'Lote',
+        'LT',
+        'Manzana',
+        'MZ',
+        'MZN',
+        'OFIC',
+        'Oficina',
+        'Piso',
+        'Prolongacion',
+        'REF',
+        'Sector',
+        'Torre',
+        'Unidad Vecinal',
+        'URB',
+        'Urbanizacio',
+        'Urbanizacion',
+        'UV',
+        'Villa'
+      ],
+      urbanizationStopWords: [
+        'Urbanizacion',
+        'Urb',
+        'Urbanisacion',
+        'Ub'
+      ],
+      districts: [
+        'LIMA',
+        'CERCADO DE LIMA',
+        'ANCON',
+        'ATE',
+        'BARRANCO',
+        'BRENA',
+        'CARABAYLLO',
+        'COMAS',
+        'CHACLACAYO',
+        'CHORRILLOS',
+        'EL AGUSTINO',
+        'JESUS MARIA',
+        'LA MOLINA',
+        'LA VICTORIA',
+        'LINCE',
+        'LURIGANCHO',
+        'LURIN',
+        'MAGDALENA DEL MAR',
+        'MIRAFLORES',
+        'PACHACAMAC',
+        'PUCUSANA',
+        'PUEBLO LIBRE',
+        'PUENTE  PIEDRA',
+        'PUNTA NEGRA',
+        'PUNTA HERMOSA',
+        'RIMAC',
+        'MAGDALENA VIEJA',
+        'SAN BARTOLO',
+        'SAN ISIDRO',
+        'INDEPENDENCIA',
+        'SAN JUAN DE MIRAFLORES',
+        'SAN LUIS',
+        'SAN MARTIN DE PORRES',
+        'SAN MIGUEL',
+        'SANTIAGO DE SURCO',
+        'SURQUILLO',
+        'VILLA MARIA DEL TRIUNFO',
+        'SAN JUAN DE LURIGANCHO',
+        'SANTA MARIA',
+        'SANTA ROSA',
+        'LOS OLIVOS',
+        'CIENEGUILLA',
+        'SAN BORJA',
+        'VILLA EL SALVADOR',
+        'SANTA ANITA',
+        'CALLAO',
+        'BELLAVISTA',
+        'CARMEN DE LA LEGUA REYNOSO',
+        'LA PERLA',
+        'LA PUNTA',
+        'VENTANILLA'
+      ],
+      centersOfArea: [
+        {
+          commune: "LIMA",
+          city: "LIMA",
+          lat: -12.046373,
+          lng: -77.042754
+        },
+        {
+          commune: "CERCADO DE LIMA",
+          city: "LIMA",
+          lat: -12.046374,
+          lng: -77.042793
+        },
+        {
+          commune: "ANCON",
+          city: "LIMA",
+          lat: -11.709974,
+          lng: -77.125506
+        },
+        {
+          commune: "ATE",
+          city: "LIMA",
+          lat: -12.026711,
+          lng: -76.889584
+        },
+        {
+          commune: "BARRANCO",
+          city: "LIMA",
+          lat: -12.143727,
+          lng: -77.019023
+        },
+        {
+          commune: "BREÑA",
+          city: "LIMA",
+          lat: -12.058478,
+          lng: -77.050662
+        },
+        {
+          commune: "CARABAYLLO",
+          city: "LIMA",
+          lat: -11.792902,
+          lng: -76.987348
+        },
+        {
+          commune: "COMAS",
+          city: "LIMA",
+          lat: -11.929981,
+          lng: -77.053541
+        },
+        {
+          commune: "CHACLACAYO",
+          city: "LIMA",
+          lat: -11.994764,
+          lng: -76.768278
+        },
+        {
+          commune: "CHORRILLOS",
+          city: "LIMA",
+          lat: -12.187651,
+          lng: -77.007764
+        },
+        {
+          commune: "EL AGUSTINO",
+          city: "LIMA",
+          lat: -12.047996,
+          lng: -77.000653
+        },
+        {
+          commune: "JESUS MARIA",
+          city: "LIMA",
+          lat: -12.075031,
+          lng: -77.043529
+        },
+        {
+          commune: "LA MOLINA",
+          city: "LIMA",
+          lat: -12.082021,
+          lng: -77.928234
+        },
+        {
+          commune: "LA VICTORIA",
+          city: "LIMA",
+          lat: -12.073451,
+          lng: -77.016291
+        },
+        {
+          commune: "LINCE",
+          city: "LIMA",
+          lat: -12.085319,
+          lng: -77.035776
+        },
+        {
+          commune: "LURIGANCHO",
+          city: "LIMA",
+          lat: -11.968931,
+          lng: -76.993984
+        },
+        {
+          commune: "LURIN",
+          city: "LIMA",
+          lat: -12.252628,
+          lng: -76.884032
+        },
+        {
+          commune: "MAGDALENA DEL MAR",
+          city: "LIMA",
+          lat: -12.090435,
+          lng: -77.069999
+        },
+        {
+          commune: "MIRAFLORES",
+          city: "LIMA",
+          lat: -12.111062,
+          lng: -77.031591
+        },
+        {
+          commune: "PACHACAMAC",
+          city: "LIMA",
+          lat: -12.209534,
+          lng: -76.853875
+        },
+        {
+          commune: "PUCUSANA",
+          city: "LIMA",
+          lat: -12.482609,
+          lng: -76.773382
+        },
+        {
+          commune: "PUEBLO LIBRE",
+          city: "LIMA",
+          lat: -12.078758,
+          lng: -77.065542
+        },
+        {
+          commune: "PUENTE  PIEDRA",
+          city: "LIMA",
+          lat: -11.861253,
+          lng: -77.078882
+        },
+        {
+          commune: "PUNTA NEGRA",
+          city: "LIMA",
+          lat: -12.360119,
+          lng: -76.796264
+        },
+        {
+          commune: "PUNTA HERMOSA",
+          city: "LIMA",
+          lat: -12.310804,
+          lng: -76.813881
+        },
+        {
+          commune: "RIMAC",
+          city: "LIMA",
+          lat: -12.027121,
+          lng: -77.036238
+        },
+        {
+          commune: "MAGDALENA VIEJA",
+          city: "LIMA",
+          lat: -12.078758,
+          lng: -77.065542
+        },
+        {
+          commune: "SAN BARTOLO",
+          city: "LIMA",
+          lat: -12.078758,
+          lng: -77.065542
+        },
+        {
+          commune: "SAN ISIDRO",
+          city: "LIMA",
+          lat: -12.097183,
+          lng: -77.032585
+        },
+        {
+          commune: "INDEPENDENCIA",
+          city: "LIMA",
+          lat: -11.992921,
+          lng: -77.051817
+        },
+        {
+          commune: "SAN JUAN DE MIRAFLORES",
+          city: "LIMA",
+          lat: -12.153873,
+          lng: -76.971737
+        },
+        {
+          commune: "SAN LUIS",
+          city: "LIMA",
+          lat: -12.0754713,
+          lng: -76.9959872
+        },
+        {
+          commune: "SAN MARTIN DE PORRES",
+          city: "LIMA",
+          lat: -11.981557,
+          lng: -77.096882
+        },
+        {
+          commune: "SAN MIGUEL",
+          city: "LIMA",
+          lat: -12.077493,
+          lng: -77.093402
+        }, {
+          commune: "SANTIAGO DE SURCO",
+          city: "LIMA",
+          lat: -12.115735,
+          lng: -77.019023
+        },
+        {
+          commune: "SURQUILLO",
+          city: "LIMA",
+          lat: -12.141609,
+          lng: -76.991816
+        },
+        {
+          commune: "VILLA MARIA DEL TRIUNFO",
+          city: "LIMA",
+          lat: -12.159072,
+          lng: -76.929735
+        },
+        {
+          commune: "SAN JUAN DE LURIGANCHO",
+          city: "LIMA",
+          lat: -11.968931,
+          lng: -76.993984
+        },
+        {
+          commune: "SANTA MARIA",
+          city: "LIMA",
+          lat: -12.116769,
+          lng: -76.989148
+        },
+        {
+          commune: "SANTA ROSA",
+          city: "LIMA",
+          lat: -11.806679,
+          lng: -77.165772
+        },
+        {
+          commune: "LOS OLIVOS",
+          city: "LIMA",
+          lat: -11.959402,
+          lng: -77.076046
+        },
+        {
+          commune: "CIENEGUILLA",
+          city: "LIMA",
+          lat: -12.094816,
+          lng: -76.756737
+        },
+        {
+          commune: "SAN BORJA",
+          city: "LIMA",
+          lat: -12.097283,
+          lng: -76.995104
+        },
+        {
+          commune: "VILLA EL SALVADOR",
+          city: "LIMA",
+          lat: -12.216222,
+          lng: -76.941544
+        },
+        {
+          commune: "SANTA ANITA",
+          city: "LIMA",
+          lat: -12.046248,
+          lng: -76.968734
+        },
+        {
+          commune: "CALLAO",
+          city: "CALLAO",
+          lat: -12.050849,
+          lng: -77.125984
+        },
+        {
+          commune: "BELLAVISTA",
+          city: "CALLAO",
+          lat: -12.058231,
+          lng: -77.105367
+        },
+        {
+          commune: "CARMEN DE LA LEGUA REYNOSO",
+          city: "CALLAO",
+          lat: -12.040636,
+          lng: -77.088103
+        },
+        {
+          commune: "LA PERLA",
+          city: "CALLAO",
+          lat: -12.073738,
+          lng: -77.118441
+        },
+        {
+          commune: "LA PUNTA",
+          city: "CALLAO",
+          lat: -12.070778,
+          lng: -77.164334
+        },
+        {
+          commune: "VENTANILLA",
+          city: "CALLAO",
+          lat: -11.878273,
+          lng: -77.126587
+        }
+      ],
+      administrativeAreaLvl4: {
+        "AAHH MI PERU": "VENTANILLA",
+        "ALAMEDA DE VILLA SOL": "LOS OLIVOS",
+        "ALAMOS DE MONTERRICO": "SANTIAGO DE SURCO",
+        "ALISOS": "SAN MARTIN DE PORRES",
+        "ALTAMAR": "LA PERLA",
+        "ALTO PERU": "ANCON",
+        "ANO NUEVO": "COMAS",
+        "APROVISA": "LA MOLINA",
+        "ARBOLEDA DE MARANGA": "SAN MIGUEL",
+        "ARCO IRIS": "PUEBLO LIBRE",
+        "ARRIBA PERU": "SAN JUAN DE LURIGANCHO",
+        "ASOCIACION BALSAS DEL NARANJAL": "SAN JUAN DE LURIGANCHO",
+        "ASOCIACION BEGONIAS DE SANTA ROSA": "SAN JUAN DE MIRAFLORES",
+        "ASOCIACION EL ASESOR": "SAN JUAN DE LURIGANCHO",
+        "ASOCIACION GIRASOLES DE SANTA ROSA": "SAN JUAN DE MIRAFLORES",
+        "ASOCIACION LOS ROBLES": "CARABAYLLO",
+        "ASOCIACION SAN ANTONIO": "SAN JUAN DE MIRAFLORES",
+        "ASOCIACION VIRGEN DEL CARMEN": "SAN JUAN DE MIRAFLORES",
+        "ASTETE": "PUENTE PIEDRA",
+        "AURORA ESTE": "SAN JUAN DE LURIGANCHO",
+        "AVENIDA PERU": "SAN JUAN DE MIRAFLORES",
+        "BALCONCILLO": "CARABAYLLO",
+        "BELLAVISTA": "SAN JUAN DE LURIGANCHO",
+        "BENJAMIN DOIG LOSSIO": "CARMEN DE LA LEGUA REYNOSO",
+        "BOSQUE EL OLIVAR": "SAN JUAN DE MIRAFLORES",
+        "BRISAS": "PUENTE PIEDRA",
+        "BRISAS DE VILLA": "CARABAYLLO",
+        "CAJA DE AGUA": "SAN JUAN DE LURIGANCHO",
+        "CALERA DE LA MERCED": "SAN JUAN DE LURIGANCHO",
+        "CALERA DE MONTERRICO": "PUENTE PIEDRA",
+        "CALZADO PERUANO": "PUENTE PIEDRA",
+        "CAMACHO": "VILLA EL SALVADOR",
+        "CAPULLANA": "VILLA EL SALVADOR",
+        "CASUARINAS ALTA": "VILLA EL SALVADOR",
+        "CASUARINAS BAJA": "VILLA EL SALVADOR",
+        "CASUARINAS SUR": "VILLA EL SALVADOR",
+        "CEDROS DE VILLA": "VILLA EL SALVADOR",
+        "CEDROS DEL SUR": "SAN JUAN DE MIRAFLORES",
+        "CENTRO COMERCIAL MONTERRICO": "PUENTE PIEDRA",
+        "CERES": "CARMEN DE LA LEGUA REYNOSO",
+        "CERRO DE CAMACHO": "SAN JUAN DE LURIGANCHO",
+        "CERRO EL PACIFICO": "SAN JUAN DE MIRAFLORES",
+        "CHACARILLA DE OTERO": "SAN JUAN DE LURIGANCHO",
+        "CHACARILLA DEL ESTANQUE": "SAN JUAN DE MIRAFLORES",
+        "CHACARILLA SANTA CRUZ": "SAN JUAN DE MIRAFLORES",
+        "CHAMA": "SAN JUAN DE MIRAFLORES",
+        "CIUDAD DEL PESCADOR": "CARABAYLLO",
+        "CIUDAD SATELITE": "CARABAYLLO",
+        "CIUDAD SATELITE SANTA ROSA": "CARABAYLLO",
+        "CIUDAD Y CAMPO": "SAN JUAN DE MIRAFLORES",
+        "CONDADO DE CAMACHO": "CARABAYLLO",
+        "CONDEVILLA": "CARABAYLLO",
+        "CONDEVILLA SECTOR 2": "PUENTE PIEDRA",
+        "CONDEVILLA SECTOR 3": "SAN JUAN DE MIRAFLORES",
+        "COOPERATIVA ALBORADA": "CARABAYLLO",
+        "COOPERATIVA DE VIVIENDA MARANON": "ATE",
+        "COOPERATIVA SAN JOSE": "EL AGUSTINO",
+        "COOPERATIVA SAN JUAN SALINAS": "SAN MARTIN DE PORRES",
+        "COOPIP": "SAN MARTIN DE PORRES",
+        "CORPAC": "SAN ISIDRO",
+        "CORPERU": "PUEBLO LIBRE",
+        "COUNTRY CLUB": "SAN ISIDRO",
+        "COVIDA I": "LOS OLIVOS",
+        "COVIMA": "LA MOLINA",
+        "COVISEM": "SAN MARTIN DE PORRES",
+        "COVISEN": "SAN MARTIN DE PORRES",
+        "CULTURA Y PROGRESO": "CHACLACAYO",
+        "EL ALAMO": "COMAS",
+        "EL CARMEN": "PUNTA HERMOSA",
+        "EL CARMEN ALTO": "COMAS",
+        "EL CARMEN BAJO": "COMAS",
+        "EL MERCURIO": "ATE",
+        "EL PACIFICO": "SAN JUAN DE MIRAFLORES",
+        "EL PACIFICO 2 ETAPA": "SAN MARTIN DE PORRES",
+        "EL PARQUE DEL NARANJAL": "LOS OLIVOS",
+        "EL PARRAL": "COMAS",
+        "EL PINAR": "COMAS",
+        "EL PROGRESO": "CARABAYLLO",
+        "EL REMANSO": "LA MOLINA",
+        "EL TREBOL": "SANTA ANITA",
+        "EL TREBOL AZUL": "SAN JUAN DE MIRAFLORES",
+        "EL UNIVERSO": "SAN JUAN DE MIRAFLORES",
+        "ESTRELLA DE SIMON BOLIVAR": "PUENTE PIEDRA",
+        "FIORI": "SAN MARTIN DE PORRES",
+        "FLORES": "CHACLACAYO",
+        "FLORESTA DE PRO": "LOS OLIVOS",
+        "FUNDO BOCANEGRA ALTA": "CALLAO",
+        "GARDENIAS": "SAN JUAN DE LURIGANCHO",
+        "HALCONES": "CHACLACAYO",
+        "HEROES DE SAN JUAN": "SAN JUAN DE MIRAFLORES",
+        "HEROES DEL PACIFICO": "EL AGUSTINO",
+        "HIGUERETA": "SANTIAGO DE SURCO",
+        "HONOR Y LEALTAD": "SANTIAGO DE SURCO",
+        "HUAQUILLAY": "COMAS",
+        "HUASCAR": "SANTA ANITA",
+        "HUERTA GUINEA": "RIMAC",
+        "HUERTOS DE SAN ANTONIO": "SANTIAGO DE SURCO",
+        "HUERTOS DE TUNGASUCA": "CARABAYLLO",
+        "HUERTOS DE VILLA": "CHORRILLOS",
+        "HUERTOS DEL NARANJAL": "SAN MARTIN DE PORRES",
+        "INCA MANCO CAPAC": "SAN JUAN DE LURIGANCHO",
+        "INGENIERIA": "SAN MARTIN DE PORRES",
+        "INRESA": "CALLAO",
+        "ISLA DEL SOL": "LA MOLINA",
+        "ISLAS DE SAN PEDRO": "LURIN",
+        "JARDINES": "SAN MARTIN DE PORRES",
+        "JARDINES DE CARABAYLLO": "COMAS",
+        "JARDINES DE HIGUERETA": "SURQUILLO",
+        "JARDINES DE LA ENCALADA": "SANTA ANITA",
+        "JARDINES DE SALAMANCA": "ATE",
+        "JARDINES DE SAN JUAN": "SAN JUAN DE LURIGANCHO",
+        "JARDINES DE SANTA ANITA": "SANTA ANITA",
+        "JARDINES DEL NARANJAL 1 ETAPA": "SAN MARTIN DE PORRES",
+        "JARDINES VIRU": "BELLAVISTA",
+        "JAZMINES DEL NARANJAL": "LOS OLIVOS",
+        "JAZMINES DEL NARANJAL 1 ETAPA": "SAN MARTIN DE PORRES",
+        "JOSE OLAYA": "PUNTA HERMOSA",
+        "JUAN PABLO": "SANTIAGO DE SURCO",
+        "JUAN PABLO I": "COMAS",
+        "JUAN PABLO II 3ERA ETAPA": "SAN MARTIN DE PORRES",
+        "JUAN XXIII": "SAN BORJA",
+        "KARMA RESIDENCIAL": "SAN MARTIN DE PORRES",
+        "LA AURORA": "ATE",
+        "LA CASTELLANA": "SANTIAGO DE SURCO",
+        "LA COLONIAL": "CALLAO",
+        "LA ENCANTADA DE VILLA": "CHORRILLOS",
+        "LA ENSENADA 2": "PUENTE PIEDRA",
+        "LA ESTANCIA": "LA MOLINA",
+        "LA FLORESTA DE MONTERRICO": "SANTIAGO DE SURCO",
+        "LA FLORESTA DE PRO": "LOS OLIVOS",
+        "LA FONTANA": "LA MOLINA",
+        "LA HUERTA": "RIMAC",
+        "LA MERCED DE LIMA": "SAN JUAN DE MIRAFLORES",
+        "LA PLANICIE": "PUNTA HERMOSA",
+        "LA PRADERA DE SANTA ANITA": "SANTA ANITA",
+        "LA QUILLA": "CALLAO",
+        "LA RIVIERA DE MONTERRICO": "LA MOLINA",
+        "LA TABOADITA": "BELLAVISTA",
+        "LA VIRREYNA": "SANTIAGO DE SURCO",
+        "LADERAS": "LA MOLINA",
+        "LADERAS DE CHILLON": "PUENTE PIEDRA",
+        "LADERAS DE VALLE HERMOSO": "SANTIAGO DE SURCO",
+        "LAGUNA DE MONTERRICO": "SANTIAGO DE SURCO",
+        "LAS ARTES": "SAN BORJA",
+        "LAS BRISAS": "LIMA",
+        "LAS CASUARINAS": "SANTIAGO DE SURCO",
+        "LAS COLINAS DE MONTERRICO": "SANTIAGO DE SURCO",
+        "LAS FRESAS": "CALLAO",
+        "LAS GARDENIAS": "CALLAO",
+        "LAS GARDENIAS II ETAPA": "SAN MARTIN DE PORRES",
+        "LAS LAGUNAS": "LA MOLINA",
+        "LAS LAGUNAS DE MONTERRICO": "SANTIAGO DE SURCO",
+        "LAS LEYENDAS": "SAN MIGUEL",
+        "LAS LOMAS DE MONTERRICO": "SANTIAGO DE SURCO",
+        "LAS MERCEDES": "CARABAYLLO",
+        "LAS MORAS": "SAN LUIS",
+        "LAS MORERAS": "LA PERLA",
+        "LAS PALMERAS": "LOS OLIVOS",
+        "LAS PALMERAS DEL SOL DE SANTIAGO DE SURCO": "SANTIAGO DE SURCO",
+        "LAS PRADERAS DEL NARANJAL": "SAN MARTIN DE PORRES",
+        "LAS VIOLETAS": "SAN JUAN DE LURIGANCHO",
+        "LIGURIA": "SANTIAGO DE SURCO",
+        "LINDA VISTA": "SANTIAGO DE SURCO",
+        "LO PORTALES DE SANTA ROSA": "SAN MARTIN DE PORRES",
+        "LOMAS DE LA MOLINA": "LA MOLINA",
+        "LOMAS DE LA MOLINA VIEJA": "LA MOLINA",
+        "LOS ALAMOS 2 ETAPA": "CALLAO",
+        "LOS ALAMOS 4 ETAPA": "SAN MARTIN DE PORRES",
+        "LOS ALAMOS DE MONTERRICO": "SANTIAGO DE SURCO",
+        "LOS CACTUS": "LA MOLINA",
+        "LOS CIPRESES": "LIMA",
+        "LOS FICUS": "SANTA ANITA",
+        "LOS GIRASOLES": "ATE",
+        "LOS GRANADOS": "SANTIAGO DE SURCO",
+        "LOS HUERTOS": "LA MOLINA",
+        "LOS JAZMINES DEL NARANJAL": "SAN MARTIN DE PORRES",
+        "LOS LOS OLIVOS DE PRO": "LOS OLIVOS",
+        "LOS LOS OLIVOS DE SANTA ROSA": "CALLAO",
+        "LOS PARRALES": "PUENTE PIEDRA",
+        "LOS PILARES": "CALLAO",
+        "LOS PINARES": "LOS OLIVOS",
+        "LOS PORTALES": "LA MOLINA",
+        "LOS PORTALES DE CHAVIN III ETAPA": "SAN MARTIN DE PORRES",
+        "LOS PORTALES DE CHAVIN IV ETAPA": "SAN MARTIN DE PORRES",
+        "LOS PORTALES DEL NORTE": "LOS OLIVOS",
+        "LOS VINEDOS": "COMAS",
+        "MACARENA": "LA PERLA",
+        "MANZANILLO I": "SAN MARTIN DE PORRES",
+        "MANZANILLO II": "SAN MARTIN DE PORRES",
+        "MARANGA": "SAN MIGUEL",
+        "MARANGA ETAPA VI": "SAN MIGUEL",
+        "MARISCAL ANDRES AVELINO CACERES": "CHORRILLOS",
+        "MATELLINI": "CHORRILLOS",
+        "MAYORAZGO": "ATE",
+        "MAYORAZGO CHICO": "ATE",
+        "MAYORAZGO II": "SAN MARTIN DE PORRES",
+        "MERCURIO": "LOS OLIVOS",
+        "MERCURIO ALTO": "LOS OLIVOS",
+        "MESA REDONDA": "SAN MARTIN DE PORRES",
+        "MI PERU": "VENTANILLA",
+        "MI REFUGIO": "BELLAVISTA",
+        "MONTE AZUL DE NARANJAL": "SAN MARTIN DE PORRES",
+        "MONTE DE LOS LOS OLIVOS III": "SAN MARTIN DE PORRES",
+        "MONTECARMELO": "LA VICTORIA",
+        "MONTERRICO": "SANTIAGO DE SURCO",
+        "MONTERRICO NORTE": "SAN BORJA",
+        "MONTERRICO SUR": "SANTIAGO DE SURCO",
+        "MUSA": "LA MOLINA",
+        "NAVIDAD DE VILLA": "CHORRILLOS",
+        "NOCHETO": "EL AGUSTINO",
+        "NUEVA ESPERANZA": "VILLA MARIA DEL TRIUNFO",
+        "OLIMPO": "ATE",
+        "OLIVAR": "PUENTE PIEDRA",
+        "LOS OLIVOS DE PRO": "LOS OLIVOS",
+        "PACHACAMAC": "VILLA EL SALVADOR",
+        "PACHACAMAC 1ERA ETAPA": "VILLA EL SALVADOR",
+        "PACHACAMAC 2DA ETAPA": "VILLA EL SALVADOR",
+        "PACHACAMAC 3RA ETAPA": "VILLA EL SALVADOR",
+        "PACHACAMAC 4TA ETAPA": "VILLA MARIA DEL TRIUNFO",
+        "PACHACAMAC IV ETAPA SECTOR": "VILLA EL SALVADOR",
+        "PACHACAMAC SECTOR 3C": "VILLA MARIA DEL TRIUNFO",
+        "PACIFICO": "SAN MARTIN DE PORRES",
+        "PALAO": "SAN MARTIN DE PORRES",
+        "PALMERAS": "EL AGUSTINO",
+        "PALMERAS DE VILLA": "CHORRILLOS",
+        "PALOMINO": "LIMA",
+        "PANDO": "SAN MIGUEL",
+        "PANDO 3A ETAPA": "LIMA",
+        "PANDO 6A ETAPA": "PUEBLO LIBRE",
+        "PANDO 8VA ETAPA": "SAN MIGUEL",
+        "PANDO ARAMBURU": "SAN MIGUEL",
+        "PAPA JUAN XXIII": "SAN BORJA",
+        "PARQUE DE LAS LEYENDAS": "SAN MIGUEL",
+        "PARQUE DE MONTERRICO": "LA MOLINA",
+        "PARQUE NARANJAL": "LOS OLIVOS",
+        "PARQUE NARANJAL I ETAPA": "LOS OLIVOS",
+        "PARQUE NARANJAL II ETAPA": "LOS OLIVOS",
+        "PARQUE NARANJAL III ETAPA": "LOS OLIVOS",
+        "PASEO DE LA REPUBLICA": "CHORRILLOS",
+        "PEDREGAL": "SURQUILLO",
+        "PEDRO RUIZ GALLO": "CALLAO",
+        "PERSHING": "MAGDALENA DEL MAR",
+        "PERSHING GENERAL": "MAGDALENA DEL MAR",
+        "PILARES AZULES": "CALLAO",
+        "PLAYA RIMAC": "CALLAO",
+        "PORTADA DEL SOL": "LA MOLINA",
+        "PORTADA DEL SOL III ETAPA": "SANTIAGO DE SURCO",
+        "PORTALES DE CHAVIN III": "SAN MARTIN DE PORRES",
+        "PORTALES DE PACHACAMAC": "VILLA EL SALVADOR",
+        "PORTALES DEL SUR": "SAN JUAN DE MIRAFLORES",
+        "PRADERA DE SANTA ANITA I": "SANTA ANITA",
+        "PRADERAS DE LA MOLINA": "SANTIAGO DE SURCO",
+        "PREVI BOCANEGRA": "CALLAO",
+        "PRIMAVERA DE ATE": "ATE",
+        "PRO LOS LOS OLIVOS": "SAN MARTIN DE PORRES",
+        "PROLONGACION BENAVIDES": "SANTIAGO DE SURCO",
+        "PUENTE PIEDRA": "PUENTE PIEDRA",
+        "RENOVACION PALOMINO": "CALLAO",
+        "RESIDENCIAL BANCARIO": "SAN MIGUEL",
+        "RESIDENCIAL BELLAVISTA": "BELLAVISTA",
+        "RESIDENCIAL CALLAO": "SAN MIGUEL",
+        "RESIDENCIAL HIGUERETA": "SANTIAGO DE SURCO",
+        "RESIDENCIAL INGENIEROS": "LA MOLINA",
+        "RESIDENCIAL KARMA": "SAN MARTIN DE PORRES",
+        "RESIDENCIAL MONTERRICO": "LA MOLINA",
+        "RESIDENCIAL MONTERRICO SUR": "LA MOLINA",
+        "RESIDENCIAL OYAGUE": "MAGDALENA DEL MAR",
+        "RESIDENCIAL SANTA CRUZ": "SAN ISIDRO",
+        "RETABLO 4TA ETAPA": "COMAS",
+        "REYNOSO": "CARMEN DE LA LEGUA REYNOSO",
+        "RINCONADA DE PANDO": "SAN MIGUEL",
+        "RINCONADA DEL LAGO": "LA MOLINA",
+        "ROSARIO DE VILLA": "CHORRILLOS",
+        "ROSARIO DEL NORTE": "SAN MARTIN DE PORRES",
+        "SAGITARIO": "SANTIAGO DE SURCO",
+        "SALAMANCA DE MONTERRICO": "ATE",
+        "SAN AGUSTIN": "COMAS",
+        "SAN ANTONIO DE LURIN": "LURIN",
+        "SAN ANTONIO DE PADUA": "VILLA MARIA DEL TRIUNFO",
+        "SAN BORJA": "SAN BORJA",
+        "SAN BORJA SUR": "SAN BORJA",
+        "SAN DIEGO": "SAN MARTIN DE PORRES",
+        "SAN ELIAS": "SAN MARTIN DE PORRES",
+        "SAN ELIAS I": "LOS OLIVOS",
+        "SAN ELIAS III": "LOS OLIVOS",
+        "SAN GABRIEL": "SAN ISIDRO",
+        "SAN GABRIEL ALTO": "VILLA MARIA DEL TRIUNFO",
+        "SAN GERMAN": "SAN MARTIN DE PORRES",
+        "SAN GREGORIO": "ATE",
+        "SAN HILARION": "SAN JUAN DE LURIGANCHO",
+        "SAN IGNACIO DE LOYOLA": "SANTIAGO DE SURCO",
+        "SAN JOAQUIN": "BELLAVISTA",
+        "SAN JOSE": "BELLAVISTA",
+        "SAN JOSE COOP": "EL AGUSTINO",
+        "SAN JOSE DE MANGOMARCA": "SANTA ANITA",
+        "SAN JUAN MESIAS": "CALLAO",
+        "SAN JUAN ZONA A": "SAN JUAN DE MIRAFLORES",
+        "SAN JUAN ZONA B": "SAN JUAN DE MIRAFLORES",
+        "SAN JUAN ZONA C": "SAN JUAN DE MIRAFLORES",
+        "SAN JUAN ZONA D": "SAN JUAN DE MIRAFLORES",
+        "SAN JUAN ZONA E": "SAN JUAN DE MIRAFLORES",
+        "SAN MARTIN DE PORRES DE PORRES": "ANCON",
+        "SAN PABLO": "LA VICTORIA",
+        "SAN PEDRO DE GARAGAY": "SAN MARTIN DE PORRES",
+        "SAN PEDRO GARAGAY": "SAN MARTIN DE PORRES",
+        "SANTA AURORA": "SAN MARTIN DE PORRES",
+        "SANTA BEATRIZ": "LIMA",
+        "SANTA CATALINA": "LA VICTORIA",
+        "SANTA CONSTANZA": "SANTIAGO DE SURCO",
+        "SANTA CRUZ DE NUEVO VITARTE": "ATE",
+        "SANTA ELISA": "LOS OLIVOS",
+        "SANTA FE DE NARANJAL": "SAN MARTIN DE PORRES",
+        "SANTA FELICIA": "LA MOLINA",
+        "SANTA LEONOR": "CHORRILLOS",
+        "SANTA LIGIA": "COMAS",
+        "SANTA LUZMILA": "COMAS",
+        "SANTA LUSMILA": "COMAS",
+        "SANTA MARIA DEL MAR": "SANTA MARIA",
+        "SANTA MARIA MAGDALENA DEL MAR": "LURIGANCHO",
+        "SANTA RAQUEL": "LA MOLINA",
+        "SANTA RAQUEL II": "ATE",
+        "SANTA RAQUEL III ETAPA": "ATE",
+        "SANTA ROSA DE QUIVES": "EL AGUSTINO",
+        "SANTO DOMINGO 1ERA ETAPA": "CARABAYLLO",
+        "SANTO DOMINGO 2DA ETAPA": "CARABAYLLO",
+        "SANTO DOMINGO DE BOCANEGRA": "CALLAO",
+        "SANTOYO": "EL AGUSTINO",
+        "SANTOYO ZONA 6": "EL AGUSTINO",
+        "SESQUICENTENARIO": "CALLAO",
+        "SIRIUS": "LA MOLINA",
+        "SOL DE CUDIVILLA": "CARABAYLLO",
+        "SOL DE LA MOLINA": "LA MOLINA",
+        "SOL DE NARANJAL": "SAN MARTIN DE PORRES",
+        "SOL DE ORO": "LOS OLIVOS",
+        "STELLA MARIS": "BELLAVISTA",
+        "SUIZA PERUANA": "LOS OLIVOS",
+        "TABOADITA": "BELLAVISTA",
+        "TALANA": "SANTIAGO DE SURCO",
+        "TAMBO DE MONTERRICO": "SANTIAGO DE SURCO",
+        "TARAPACA": "CALLAO",
+        "TILDA": "ATE",
+        "TORRES DE SAN BORJA": "SAN BORJA",
+        "TORRES DE SAN JOSE": "BELLAVISTA",
+        "TOTORITA": "RIMAC",
+        "TRABAJADORES HACIENDA PRO": "LOS OLIVOS",
+        "TREBOL AZUL": "SAN JUAN DE MIRAFLORES",
+        "TUNGASUCA": "CARABAYLLO",
+        "TUPAC AMARU": "LA VICTORIA",
+        "VALLE HERMOSO DE MONTERRICO ESTE": "SANTIAGO DE SURCO",
+        "VALLE HERMOSO DE MONTERRICO OESTE": "SANTIAGO DE SURCO",
+        "VILLA ALEJANDRO": "LURIN",
+        "VILLA CARMEN": "ATE",
+        "VILLA CORPAC": "CARABAYLLO",
+        "VILLA DEL NORTE": "LOS OLIVOS",
+        "VILLA DEL SOL": "LURIGANCHO",
+        "VILLA LAS FLORES": "PUENTE PIEDRA",
+        "VILLA MARINA": "CHORRILLOS",
+        "VILLA MERCED": "PUNTA NEGRA",
+        "VILLA MERCEDES": "SAN JUAN DE MIRAFLORES",
+        "VILLA SAN ANTONIO": "CARABAYLLO",
+        "VILLA SANTA ANITA": "SANTA ANITA",
+        "VILLA SOL": "LOS OLIVOS",
+        "VIÑEDOS DE SANTIAGO DE SURCO": "SANTIAGO DE SURCO",
+        "VIPOL": "CALLAO",
+        "VIRGEN DE LA MERCED": "SANTA ANITA",
+        "VIRGEN DE LA PUERTA": "LOS OLIVOS",
+        "VIRGEN DE LAS MERCEDES": "LOS OLIVOS",
+        "VIRGEN DEL CARMEN": "COMAS",
+        "VIRGEN DEL ROSARIO": "SAN MARTIN DE PORRES",
+        "VIVIENDA DEL OLIVAR": "LOS OLIVOS"
+      },
+      sendAdministrativeAreaLv3: true
+    },
+    CL: {
+      centerOfCountry: {lat: -35.675147, lng: -71.542969},
+      specialChars: {
+        ',': ' ',
+        '.': ' ',
+        ':': ' ',
+        ';': ' ',
+        'ñ': 'n',
+        '/': ' ',
+        '\'': ' ',
+        '"': ' ',
+        '?': ' ',
+        '¿': ' ',
+        '!': ' ',
+        '|': ' ',
+        '¡': ' ',
+        '_': ' ',
+        '#': ' ',
+        '$': ' ',
+        '*': ' ',
+        '(': ' ',
+        ')': ' ',
+        '[': ' ',
+        ']': ' ',
+        '{': ' ',
+        '}': ' ',
+        '%': ' ',
+        '@': ' ',
+        '^': ' ',
+        '`': ' ',
+        '~': ' ',
+        '-': ' '
+      },
+      latinMap: JSON.parse(decodeURIComponent(escape(atob(base64map)))),
+      absoluteStopWords: [
+        'AV',
+        'avda',
+        'aven',
+        'aveni',
+        'Avenida',
+        'call',
+        'Calle',
+        'CL',
+        'CLL',
+        'CLLE',
+        'NRO',
+        'Pasaje',
+        'PJ',
+        'PJE',
+        'pje',
+        'psaje',
+        'PSJ',
+        'PSJE',
+        'S/N',
+        'SN',
+        'sub',
+        'subt',
+        'subterraneo'
+      ],
+      continuationStopWords: [
+        '1ER',
+        '2DO',
+        '3ER',
+        '4TO',
+        'Anexo',
+        'Apartamento',
+        'APT',
+        'ASOC',
+        'Asociacion',
+        'blck',
+        'blk',
+        'Block',
+        'Blok',
+        'Bloq',
+        'Bloque',
+        'Cdra',
+        'Cond',
+        'Condominio',
+        'DEP',
+        'Departamento',
+        'Depto',
+        'dp',
+        'DPO',
+        'DPT',
+        'DPTO',
+        'DTO',
+        'Edif',
+        'Edificio',
+        'KM',
+        'Ll',
+        'Lote',
+        'LT',
+        'Manzana',
+        'Modulo',
+        'MZ',
+        'MZN',
+        'of',
+        'OFIC',
+        'Oficina',
+        'ofna',
+        'Paseo',
+        'Piso',
+        'Pob',
+        'Pobl',
+        'pobla',
+        'Poblacion',
+        'pseo',
+        'REF',
+        'Sector',
+        'Torre',
+        'Villa',
+        'bod',
+        'bod.',
+        'bodega',
+        'casa',
+        'esq',
+        'loc',
+        'local',
+        'mod',
+        'poblac',
+        'sitio'
+      ],
+      urbanizationStopWords: [],
+      districts: [
+        'ARICA',
+        'CAMARONES',
+        'PUTRE',
+        'GENERAL LAGOS',
+        'IQUIQUE',
+        'ALTO HOSPICIO',
+        'POZO ALMONTE',
+        'CAMIÑA',
+        'COLCHANE',
+        'HUARA',
+        'PICA',
+        'ANTOFAGASTA',
+        'MEJILLONES',
+        'SIERRA GORDA',
+        'TALTAL',
+        'CALAMA',
+        'OLLAGÜE',
+        'SAN PEDRO DE ATACAMA',
+        'TOCOPILLA',
+        'MARÍA ELENA',
+        'COPIAPÓ',
+        'CALDERA',
+        'TIERRA AMARILLA',
+        'CHAÑARAL',
+        'DIEGO DE ALMAGRO',
+        'VALLENAR',
+        'ALTO DEL CARMEN',
+        'FREIRINA',
+        'HUASCO',
+        'LA SERENA',
+        'COQUIMBO',
+        'ANDACOLLO',
+        'LA HIGUERA',
+        'PAIHUANO',
+        'VICUÑA',
+        'ILLAPEL',
+        'CANELA',
+        'LOS VILOS',
+        'SALAMANCA',
+        'OVALLE',
+        'COMBARBALÁ',
+        'MONTE PATRIA',
+        'PUNITAQUI',
+        'RÍO HURTADO',
+        'VALPARAÍSO',
+        'CASABLANCA',
+        'CONCÓN',
+        'JUAN FERNÁNDEZ',
+        'PUCHUNCAVÍ',
+        'QUINTERO',
+        'VIÑA DEL MAR',
+        'LOS ANDES',
+        'CALLE LARGA',
+        'RINCONADA',
+        'SAN ESTEBAN',
+        'LA LIGUA',
+        'CABILDO',
+        'PAPUDO',
+        'PETORCA',
+        'ZAPALLAR',
+        'QUILLOTA',
+        'LA CALERA',
+        'HIJUELAS',
+        'LA CRUZ',
+        'NOGALES',
+        'SAN ANTONIO',
+        'ALGARROBO',
+        'CARTAGENA',
+        'EL QUISCO',
+        'EL TABO',
+        'SANTO DOMINGO',
+        'SAN FELIPE',
+        'CATEMU',
+        'LLAILLAY',
+        'PANQUEHUE',
+        'PUTAENDO',
+        'SANTA MARÍA',
+        'QUILPUÉ',
+        'LIMACHE',
+        'OLMUÉ',
+        'VILLA ALEMANA',
+        'RANCAGUA',
+        'CODEGUA',
+        'COINCO',
+        'COLTAUCO',
+        'DOÑIHUE',
+        'GRANEROS',
+        'LAS CABRAS',
+        'MACHALÍ',
+        'MALLOA',
+        'MOSTAZAL',
+        'OLIVAR',
+        'PEUMO',
+        'PICHIDEGUA',
+        'QUINTA DE TILCOCO',
+        'RENGO',
+        'REQUÍNOA',
+        'SAN VICENTE',
+        'PICHILEMU',
+        'LA ESTRELLA',
+        'LITUECHE',
+        'MARCHIHUE',
+        'NAVIDAD',
+        'PAREDONES',
+        'SAN FERNANDO',
+        'CHÉPICA',
+        'CHIMBARONGO',
+        'LOLOL',
+        'NANCAGUA',
+        'PALMILLA',
+        'PERALILLO',
+        'PLACILLA',
+        'PUMANQUE',
+        'SANTA CRUZ',
+        'TALCA',
+        'CONSTITUCIÓN',
+        'CUREPTO',
+        'EMPEDRADO',
+        'MAULE',
+        'PELARCO',
+        'PENCAHUE',
+        'RÍO CLARO',
+        'SAN CLEMENTE',
+        'SAN RAFAEL',
+        'CAUQUENES',
+        'CHANCO',
+        'PELLUHUE',
+        'CURICÓ',
+        'HUALAÑÉ',
+        'LICANTÉN',
+        'MOLINA',
+        'RAUCO',
+        'ROMERAL',
+        'SAGRADA FAMILIA',
+        'TENO',
+        'VICHUQUÉN',
+        'LINARES',
+        'COLBÚN',
+        'LONGAVÍ',
+        'PARRAL',
+        'RETIRO',
+        'SAN JAVIER',
+        'VILLA ALEGRE',
+        'YERBAS BUENAS',
+        'CONCEPCIÓN',
+        'CORONEL',
+        'CHIGUAYANTE',
+        'FLORIDA',
+        'HUALQUI',
+        'LOTA',
+        'PENCO',
+        'SAN PEDRO DE LA PAZ',
+        'SANTA JUANA',
+        'TALCAHUANO',
+        'TOMÉ',
+        'HUALPÉN',
+        'LEBU',
+        'ARAUCO',
+        'CAÑETE',
+        'CONTULMO',
+        'CURANILAHUE',
+        'LOS ÁLAMOS',
+        'TIRÚA',
+        'LOS ÁNGELES',
+        'ANTUCO',
+        'CABRERO',
+        'LAJA',
+        'MULCHÉN',
+        'NACIMIENTO',
+        'NEGRETE',
+        'QUILACO',
+        'QUILLECO',
+        'SAN ROSENDO',
+        'SANTA BÁRBARA',
+        'TUCAPEL',
+        'YUMBEL',
+        'ALTO BIOBÍO',
+        'CHILLÁN',
+        'BULNES',
+        'COBQUECURA',
+        'COELEMU',
+        'COIHUECO',
+        'CHILLÁN VIEJO',
+        'EL CARMEN',
+        'NINHUE',
+        'ÑIQUÉN',
+        'PEMUCO',
+        'PINTO',
+        'PORTEZUELO',
+        'QUILLÓN',
+        'QUIRIHUE',
+        'RÁNQUIL',
+        'SAN CARLOS',
+        'SAN FABIÁN',
+        'SAN IGNACIO',
+        'SAN NICOLÁS',
+        'TREGUACO',
+        'YUNGAY',
+        'TEMUCO',
+        'CARAHUE',
+        'CUNCO',
+        'CURARREHUE',
+        'FREIRE',
+        'GALVARINO',
+        'GORBEA',
+        'LAUTARO',
+        'LONCOCHE',
+        'MELIPEUCO',
+        'NUEVA IMPERIAL',
+        'PADRE LAS CASAS',
+        'PERQUENCO',
+        'PITRUFQUÉN',
+        'PUCÓN',
+        'SAAVEDRA',
+        'TEODORO SCHMIDT',
+        'TOLTÉN',
+        'VILCÚN',
+        'VILLARRICA',
+        'CHOLCHOL',
+        'ANGOL',
+        'COLLIPULLI',
+        'CURACAUTÍN',
+        'ERCILLA',
+        'LONQUIMAY',
+        'LOS SAUCES',
+        'LUMACO',
+        'PURÉN',
+        'RENAICO',
+        'TRAIGUÉN',
+        'VICTORIA',
+        'VALDIVIA',
+        'CORRAL',
+        'LANCO',
+        'LOS LAGOS',
+        'MÁFIL',
+        'MARIQUINA',
+        'PAILLACO',
+        'PANGUIPULLI',
+        'LA UNIÓN',
+        'FUTRONO',
+        'LAGO RANCO',
+        'RÍO BUENO',
+        'PUERTO MONTT',
+        'CALBUCO',
+        'COCHAMÓ',
+        'FRESIA',
+        'FRUTILLAR',
+        'LOS MUERMOS',
+        'LLANQUIHUE',
+        'MAULLÍN',
+        'PUERTO VARAS',
+        'CASTRO',
+        'ANCUD',
+        'CHONCHI',
+        'CURACO DE VÉLEZ',
+        'DALCAHUE',
+        'PUQUELDÓN',
+        'QUEILÉN',
+        'QUELLÓN',
+        'QUEMCHI',
+        'QUINCHAO',
+        'OSORNO',
+        'PUERTO OCTAY',
+        'PURRANQUE',
+        'PUYEHUE',
+        'RÍO NEGRO',
+        'SAN JUAN DE LA COSTA',
+        'SAN PABLO',
+        'CHAITÉN',
+        'FUTALEUFÚ',
+        'HUALAIHUÉ',
+        'PALENA',
+        'COYHAIQUE',
+        'LAGO VERDE',
+        'AYSÉN',
+        'CISNES',
+        'GUAITECAS',
+        'COCHRANE',
+        'O’HIGGINS',
+        'TORTEL',
+        'CHILE CHICO',
+        'RÍO IBÁÑEZ',
+        'PUNTA ARENAS',
+        'LAGUNA BLANCA',
+        'RÍO VERDE',
+        'SAN GREGORIO',
+        'CABO DE HORNOS',
+        'ANTÁRTICA',
+        'PORVENIR',
+        'PRIMAVERA',
+        'TIMAUKEL',
+        'NATALES',
+        'TORRES DEL PAINE',
+        'SANTIAGO',
+        'CERRILLOS',
+        'CERRO NAVIA',
+        'CONCHALÍ',
+        'EL BOSQUE',
+        'ESTACIÓN CENTRAL',
+        'HUECHURABA',
+        'INDEPENDENCIA',
+        'LA CISTERNA',
+        'LA FLORIDA',
+        'LA GRANJA',
+        'LA PINTANA',
+        'LA REINA',
+        'LAS CONDES',
+        'LO BARNECHEA',
+        'LO ESPEJO',
+        'LO PRADO',
+        'MACUL',
+        'MAIPÚ',
+        'ÑUÑOA',
+        'PEDRO AGUIRRE CERDA',
+        'PEÑALOLÉN',
+        'PROVIDENCIA',
+        'PUDAHUEL',
+        'QUILICURA',
+        'QUINTA NORMAL',
+        'RECOLETA',
+        'RENCA',
+        'SAN JOAQUÍN',
+        'SAN MIGUEL',
+        'SAN RAMÓN',
+        'VITACURA',
+        'PUENTE ALTO',
+        'PIRQUE',
+        'SAN JOSÉ DE MAIPO',
+        'COLINA',
+        'LAMPA',
+        'TIL TIL',
+        'SAN BERNARDO',
+        'BUIN',
+        'CALERA DE TANGO',
+        'PAINE',
+        'MELIPILLA',
+        'ALHUÉ',
+        'CURACAVÍ',
+        'MARÍA PINTO',
+        'SAN PEDRO',
+        'TALAGANTE',
+        'EL MONTE',
+        'ISLA DE MAIPO',
+        'PADRE HURTADO',
+        'PEÑAFLOR'
+      ],
+      centersOfArea: [
+        {
+          city: "Arica",
+          commune: "Arica",
+          lat: -18.478253,
+          lng: -70.312598
+        },
+        {
+          city: "Arica",
+          commune: "Camarones",
+          lat: -19.011193,
+          lng: -69.865465
+        },
+        {
+          city: "Parinacota",
+          commune: "Putre",
+          lat: -18.19699,
+          lng: -69.559727
+        },
+        {
+          city: "Parinacota",
+          commune: "General Lagos",
+          lat: -17.6533,
+          lng: -69.6347
+        },
+        {
+          city: "Iquique",
+          commune: "Iquique",
+          lat: -20.230703,
+          lng: -70.135669
+        },
+        {
+          city: "Iquique",
+          commune: "Alto Hospicio",
+          lat: -20.268672,
+          lng: -70.104916
+        },
+        {
+          city: "Tamarugal",
+          commune: "Pozo Almonte",
+          lat: -20.256709,
+          lng: -69.786012
+        },
+        {
+          city: "Tamarugal",
+          commune: "Camiña",
+          lat: -19.311628,
+          lng: -69.429868
+        },
+        {
+          city: "Tamarugal",
+          commune: "Colchane",
+          lat: -19.7,
+          lng: -68.883299
+        },
+        {
+          city: "Tamarugal",
+          commune: "Huara",
+          lat: -19.997246,
+          lng: -69.771851
+        },
+        {
+          city: "Tamarugal",
+          commune: "Pica",
+          lat: -20.489483,
+          lng: -69.330511
+        },
+        {
+          city: "Antofagasta",
+          commune: "Antofagasta",
+          lat: -23.650927,
+          lng: -70.397502
+        },
+        {
+          city: "Antofagasta",
+          commune: "Mejillones",
+          lat: -23.098501,
+          lng: -70.445504
+        },
+        {
+          city: "Antofagasta",
+          commune: "Sierra Gorda",
+          lat: -22.886012,
+          lng: -69.317199
+        },
+        {
+          city: "Antofagasta",
+          commune: "Taltal",
+          lat: -25.406494,
+          lng: -70.480302
+        },
+        {
+          city: "El Loa",
+          commune: "Calama",
+          lat: -22.454392,
+          lng: -68.929381
+        },
+        {
+          city: "El Loa",
+          commune: "Ollagüe",
+          lat: -21.225691,
+          lng: -68.25478
+        },
+        {
+          city: "El Loa",
+          commune: "San Pedro de Atacama",
+          lat: -22.908707,
+          lng: -68.199715
+        },
+        {
+          city: "Tocopilla",
+          commune: "Tocopilla",
+          lat: -22.085797,
+          lng: -70.193006
+        },
+        {
+          city: "Tocopilla",
+          commune: "María Elena",
+          lat: -22.345004,
+          lng: -69.660705
+        },
+        {
+          city: "Copiapó",
+          commune: "Copiapó",
+          lat: -27.366576,
+          lng: -70.332158
+        },
+        {
+          city: "Copiapó",
+          commune: "Caldera",
+          lat: -27.0667,
+          lng: -70.817814
+        },
+        {
+          city: "Copiapó",
+          commune: "Tierra Amarilla",
+          lat: -27.46717,
+          lng: -70.265219
+        },
+        {
+          city: "Chañaral",
+          commune: "Chañaral",
+          lat: -26.345004,
+          lng: -70.624192
+        },
+        {
+          city: "Chañaral",
+          commune: "Diego de Almagro",
+          lat: -26.390248,
+          lng: -70.04753
+        },
+        {
+          city: "Huasco",
+          commune: "Vallenar",
+          lat: -28.575795,
+          lng: -70.7571
+        },
+        {
+          city: "Huasco",
+          commune: "Alto del Carmen",
+          lat: -28.759444,
+          lng: -70.486667
+        },
+        {
+          city: "Huasco",
+          commune: "Freirina",
+          lat: -28.512094,
+          lng: -71.079596
+        },
+        {
+          city: "Huasco",
+          commune: "Huasco",
+          lat: -28.4664,
+          lng: -71.2192
+        },
+        {
+          city: "Elqui",
+          commune: "La Serena",
+          lat: -29.902669,
+          lng: -71.251937
+        },
+        {
+          city: "Elqui",
+          commune: "Coquimbo",
+          lat: -29.959,
+          lng: -71.338918
+        },
+        {
+          city: "Elqui",
+          commune: "Andacollo",
+          lat: -30.235794,
+          lng: -71.082802
+        },
+        {
+          city: "Elqui",
+          commune: "La Higuera",
+          lat: -29.511953,
+          lng: -71.200084
+        },
+        {
+          city: "Elqui",
+          commune: "Paihuano",
+          lat: -30.027689,
+          lng: -70.517814
+        },
+        {
+          city: "Elqui",
+          commune: "Vicuña",
+          lat: -30.0319,
+          lng: -70.7081
+        },
+        {
+          city: "Choapa",
+          commune: "Illapel",
+          lat: -31.6308,
+          lng: -71.1653
+        },
+        {
+          city: "Choapa",
+          commune: "Canela",
+          lat: -31.398889,
+          lng: -71.45611
+        },
+        {
+          city: "Choapa",
+          commune: "Los Vilos",
+          lat: -31.912186,
+          lng: -71.511201
+        },
+        {
+          city: "Choapa",
+          commune: "Salamanca",
+          lat: -31.782493,
+          lng: -70.96071
+        },
+        {
+          city: "Limarí",
+          commune: "Ovalle",
+          lat: -30.604304,
+          lng: -71.196988
+        },
+        {
+          city: "Limarí",
+          commune: "Combarbalá",
+          lat: -31.179096,
+          lng: -71.005095
+        },
+        {
+          city: "Limarí",
+          commune: "Monte Patria",
+          lat: -30.697894,
+          lng: -70.958688
+        },
+        {
+          city: "Limarí",
+          commune: "Punitaqui",
+          lat: -30.826099,
+          lng: -71.257791
+        },
+        {
+          city: "Limarí",
+          commune: "Río Hurtado",
+          lat: -30.266667,
+          lng: -70.666667
+        },
+        {
+          city: "Valparaíso",
+          commune: "Valparaíso",
+          lat: -33.047238,
+          lng: -71.612688
+        },
+        {
+          city: "Valparaíso",
+          commune: "Casablanca",
+          lat: -33.319037,
+          lng: -71.407631
+        },
+        {
+          city: "Valparaíso",
+          commune: "Concón",
+          lat: -32.923936,
+          lng: -71.523479
+        },
+        {
+          city: "Valparaíso",
+          commune: "Juan Fernández",
+          lat: -33.77443,
+          lng: -80.776861
+        },
+        {
+          city: "Valparaíso",
+          commune: "Puchuncaví",
+          lat: -32.722005,
+          lng: -71.4117
+        },
+        {
+          city: "Valparaíso",
+          commune: "Quintero",
+          lat: -32.77231,
+          lng: -71.5333
+        },
+        {
+          city: "Valparaíso",
+          commune: "Viña del Mar",
+          lat: -33.015348,
+          lng: -71.550027
+        },
+        {
+          city: "Los Andes",
+          commune: "Los Andes",
+          lat: -32.833799,
+          lng: -70.597217
+        },
+        {
+          city: "Los Andes",
+          commune: "Calle Larga",
+          lat: -32.857493,
+          lng: -70.625806
+        },
+        {
+          city: "Los Andes",
+          commune: "Rinconada",
+          lat: -32.835241,
+          lng: -70.701036
+        },
+        {
+          city: "Los Andes",
+          commune: "San Esteban",
+          lat: -32.800499,
+          lng: -70.579803
+        },
+        {
+          city: "Petorca",
+          commune: "La Ligua",
+          lat: -32.449901,
+          lng: -71.232595
+        },
+        {
+          city: "Petorca",
+          commune: "Cabildo",
+          lat: -32.425806,
+          lng: -71.066162
+        },
+        {
+          city: "Petorca",
+          commune: "Papudo",
+          lat: -32.507208,
+          lng: -71.448501
+        },
+        {
+          city: "Petorca",
+          commune: "Petorca",
+          lat: -32.25,
+          lng: -70.9333
+        },
+        {
+          city: "Petorca",
+          commune: "Zapallar",
+          lat: -32.553805,
+          lng: -71.458135
+        },
+        {
+          city: "Quillota",
+          commune: "Quillota",
+          lat: -32.880302,
+          lng: -71.249715
+        },
+        {
+          city: "Quillota",
+          commune: "La Calera",
+          lat: -32.787795,
+          lng: -71.203996
+        },
+        {
+          city: "Quillota",
+          commune: "Hijuelas",
+          lat: -32.798001,
+          lng: -71.143721
+        },
+        {
+          city: "Quillota",
+          commune: "La Cruz",
+          lat: -32.825806,
+          lng: -71.227305
+        },
+        {
+          city: "Quillota",
+          commune: "Nogales",
+          lat: -32.7333,
+          lng: -71.204211
+        },
+        {
+          city: "San Antonio",
+          commune: "San Antonio",
+          lat: -33.59228,
+          lng: -71.605512
+        },
+        {
+          city: "San Antonio",
+          commune: "Algarrobo",
+          lat: -33.364776,
+          lng: -71.670553
+        },
+        {
+          city: "San Antonio",
+          commune: "Cartagena",
+          lat: -33.548246,
+          lng: -71.604574
+        },
+        {
+          city: "San Antonio",
+          commune: "El Quisco",
+          lat: -33.398596,
+          lng: -71.698153
+        },
+        {
+          city: "San Antonio",
+          commune: "El Tabo",
+          lat: -33.455716,
+          lng: -71.666934
+        },
+        {
+          city: "San Antonio",
+          commune: "Santo Domingo",
+          lat: -33.635833,
+          lng: -71.628056
+        },
+        {
+          city: "San Felipe de Aconcagua",
+          commune: "San Felipe",
+          lat: -32.75,
+          lng: -70.720811
+        },
+        {
+          city: "San Felipe de Aconcagua",
+          commune: "Catemu",
+          lat: -32.778804,
+          lng: -70.962703
+        },
+        {
+          city: "San Felipe de Aconcagua",
+          commune: "Llaillay",
+          lat: -32.844379,
+          lng: -70.942817
+        },
+        {
+          city: "San Felipe de Aconcagua",
+          commune: "Panquehue",
+          lat: -32.76703,
+          lng: -70.8333
+        },
+        {
+          city: "San Felipe de Aconcagua",
+          commune: "Putaendo",
+          lat: -32.628461,
+          lng: -70.717743
+        },
+        {
+          city: "San Felipe de Aconcagua",
+          commune: "Santa María",
+          lat: -32.747002,
+          lng: -70.658707
+        },
+        {
+          city: "Marga Marga",
+          commune: "Quilpué",
+          lat: -33.04827,
+          lng: -71.440875
+        },
+        {
+          city: "Marga Marga",
+          commune: "Limache",
+          lat: -33.009528,
+          lng: -71.259588
+        },
+        {
+          city: "Marga Marga",
+          commune: "Olmué",
+          lat: -32.998138,
+          lng: -71.189278
+        },
+        {
+          city: "Marga Marga",
+          commune: "Villa Alemana",
+          lat: -33.051693,
+          lng: -71.390623
+        },
+        {
+          city: "Cachapoal",
+          commune: "Rancagua",
+          lat: -34.170132,
+          lng: -70.740625
+        },
+        {
+          city: "Cachapoal",
+          commune: "Codegua",
+          lat: -34.037031,
+          lng: -70.672864
+        },
+        {
+          city: "Cachapoal",
+          commune: "Coinco",
+          lat: -34.266157,
+          lng: -70.959341
+        },
+        {
+          city: "Cachapoal",
+          commune: "Coltauco",
+          lat: -34.287797,
+          lng: -71.085551
+        },
+        {
+          city: "Cachapoal",
+          commune: "Doñihue",
+          lat: -34.228986,
+          lng: -70.957928
+        },
+        {
+          city: "Cachapoal",
+          commune: "Graneros",
+          lat: -34.066691,
+          lng: -70.732564
+        },
+        {
+          city: "Cachapoal",
+          commune: "Las Cabras",
+          lat: -34.293218,
+          lng: -71.312629
+        },
+        {
+          city: "Cachapoal",
+          commune: "Machalí",
+          lat: -34.179452,
+          lng: -70.656515
+        },
+        {
+          city: "Cachapoal",
+          commune: "Malloa",
+          lat: -34.44239,
+          lng: -70.946388
+        },
+        {
+          city: "Cachapoal",
+          commune: "Mostazal",
+          lat: -33.94976,
+          lng: -70.574088
+        },
+        {
+          city: "Cachapoal",
+          commune: "Olivar",
+          lat: -34.233,
+          lng: -70.882999
+        },
+        {
+          city: "Cachapoal",
+          commune: "Peumo",
+          lat: -34.396339,
+          lng: -71.170079
+        },
+        {
+          city: "Cachapoal",
+          commune: "Pichidegua",
+          lat: -34.357378,
+          lng: -71.287259
+        },
+        {
+          city: "Cachapoal",
+          commune: "Quinta de Tilcoco",
+          lat: -34.3554,
+          lng: -70.970468
+        },
+        {
+          city: "Cachapoal",
+          commune: "Rengo",
+          lat: -34.402379,
+          lng: -70.867441
+        },
+        {
+          city: "Cachapoal",
+          commune: "Requínoa",
+          lat: -34.288374,
+          lng: -70.815833
+        },
+        {
+          city: "Cachapoal",
+          commune: "San Vicente",
+          lat: -34.434943,
+          lng: -71.091374
+        },
+        {
+          city: "Cardenal Caro",
+          commune: "Pichilemu",
+          lat: -34.386724,
+          lng: -72.004773
+        },
+        {
+          city: "Cardenal Caro",
+          commune: "La Estrella",
+          lat: -34.205197,
+          lng: -71.654727
+        },
+        {
+          city: "Cardenal Caro",
+          commune: "Litueche",
+          lat: -34.117272,
+          lng: -71.725175
+        },
+        {
+          city: "Cardenal Caro",
+          commune: "Marchihue",
+          lat: -34.398446,
+          lng: -71.621571
+        },
+        {
+          city: "Cardenal Caro",
+          commune: "Navidad",
+          lat: -33.959395,
+          lng: -71.829518
+        },
+        {
+          city: "Cardenal Caro",
+          commune: "Paredones",
+          lat: -34.651965,
+          lng: -71.900144
+        },
+        {
+          city: "Colchagua",
+          commune: "San Fernando",
+          lat: -34.58586,
+          lng: -70.99078
+        },
+        {
+          city: "Colchagua",
+          commune: "Chépica",
+          lat: -34.725538,
+          lng: -71.272592
+        },
+        {
+          city: "Colchagua",
+          commune: "Chimbarongo",
+          lat: -34.70924,
+          lng: -71.041271
+        },
+        {
+          city: "Colchagua",
+          commune: "Lolol",
+          lat: -34.728416,
+          lng: -71.645824
+        },
+        {
+          city: "Colchagua",
+          commune: "Nancagua",
+          lat: -34.65232,
+          lng: -71.196859
+        },
+        {
+          city: "Colchagua",
+          commune: "Palmilla",
+          lat: -34.532506,
+          lng: -71.412993
+        },
+        {
+          city: "Colchagua",
+          commune: "Peralillo",
+          lat: -34.477268,
+          lng: -71.487259
+        },
+        {
+          city: "Colchagua",
+          commune: "Placilla",
+          lat: -34.633795,
+          lng: -71.110827
+        },
+        {
+          city: "Colchagua",
+          commune: "Pumanque",
+          lat: -34.602656,
+          lng: -71.655293
+        },
+        {
+          city: "Colchagua",
+          commune: "Santa Cruz",
+          lat: -34.632421,
+          lng: -71.359211
+        },
+        {
+          city: "Talca",
+          commune: "Talca",
+          lat: -35.423244,
+          lng: -71.64848
+        },
+        {
+          city: "Talca",
+          commune: "Constitución",
+          lat: -35.3333,
+          lng: -72.416699
+        },
+        {
+          city: "Talca",
+          commune: "Curepto",
+          lat: -35.095854,
+          lng: -72.020889
+        },
+        {
+          city: "Talca",
+          commune: "Empedrado",
+          lat: -35.589943,
+          lng: -72.276304
+        },
+        {
+          city: "Talca",
+          commune: "Maule",
+          lat: -35.423244,
+          lng: -71.64848
+        },
+        {
+          city: "Talca",
+          commune: "Pelarco",
+          lat: -35.383882,
+          lng: -71.447191
+        },
+        {
+          city: "Talca",
+          commune: "Pencahue",
+          lat: -35.396065,
+          lng: -71.797456
+        },
+        {
+          city: "Talca",
+          commune: "Río Claro",
+          lat: -35.280826,
+          lng: -71.25995
+        },
+        {
+          city: "Talca",
+          commune: "San Clemente",
+          lat: -35.536467,
+          lng: -71.48937
+        },
+        {
+          city: "Talca",
+          commune: "San Rafael",
+          lat: -35.307457,
+          lng: -71.523498
+        },
+        {
+          city: "Cauquenes",
+          commune: "Cauquenes",
+          lat: -35.967628,
+          lng: -72.322233
+        },
+        {
+          city: "Cauquenes",
+          commune: "Chanco",
+          lat: -35.7333,
+          lng: -72.5333
+        },
+        {
+          city: "Cauquenes",
+          commune: "Pelluhue",
+          lat: -35.814151,
+          lng: -72.574997
+        },
+        {
+          city: "Curicó",
+          commune: "Curicó",
+          lat: -34.977985,
+          lng: -71.25288
+        },
+        {
+          city: "Curicó",
+          commune: "Hualañé",
+          lat: -34.972515,
+          lng: -71.799337
+        },
+        {
+          city: "Curicó",
+          commune: "Licantén",
+          lat: -34.985244,
+          lng: -71.984987
+        },
+        {
+          city: "Curicó",
+          commune: "Molina",
+          lat: -35.116498,
+          lng: -71.282975
+        },
+        {
+          city: "Curicó",
+          commune: "Rauco",
+          lat: -34.925344,
+          lng: -71.315631
+        },
+        {
+          city: "Curicó",
+          commune: "Romeral",
+          lat: -34.962289,
+          lng: -71.131993
+        },
+        {
+          city: "Curicó",
+          commune: "Sagrada Familia",
+          lat: -34.99842,
+          lng: -71.344582
+        },
+        {
+          city: "Curicó",
+          commune: "Teno",
+          lat: -34.870299,
+          lng: -71.166403
+        },
+        {
+          city: "Curicó",
+          commune: "Vichuquén",
+          lat: -34.883744,
+          lng: -71.995397
+        },
+        {
+          city: "Linares",
+          commune: "Linares",
+          lat: -35.846407,
+          lng: -71.599613
+        },
+        {
+          city: "Linares",
+          commune: "Colbún",
+          lat: -35.699248,
+          lng: -71.414691
+        },
+        {
+          city: "Linares",
+          commune: "Longaví",
+          lat: -35.963626,
+          lng: -71.683125
+        },
+        {
+          city: "Linares",
+          commune: "Parral",
+          lat: -36.139959,
+          lng: -71.82444
+        },
+        {
+          city: "Linares",
+          commune: "Retiro",
+          lat: -36.05,
+          lng: -71.7667
+        },
+        {
+          city: "Linares",
+          commune: "San Javier",
+          lat: -35.593096,
+          lng: -71.732502
+        },
+        {
+          city: "Linares",
+          commune: "Villa Alegre",
+          lat: -35.676196,
+          lng: -71.743912
+        },
+        {
+          city: "Linares",
+          commune: "Yerbas Buenas",
+          lat: -35.750077,
+          lng: -71.583732
+        },
+        {
+          city: "Concepción",
+          commune: "Concepción",
+          lat: -36.820135,
+          lng: -73.04439
+        },
+        {
+          city: "Concepción",
+          commune: "Coronel",
+          lat: -37.034076,
+          lng: -73.140483
+        },
+        {
+          city: "Concepción",
+          commune: "Chiguayante",
+          lat: -36.953216,
+          lng: -73.017378
+        },
+        {
+          city: "Concepción",
+          commune: "Florida",
+          lat: -36.823787,
+          lng: -72.668471
+        },
+        {
+          city: "Concepción",
+          commune: "Hualqui",
+          lat: -36.973787,
+          lng: -72.936843
+        },
+        {
+          city: "Concepción",
+          commune: "Lota",
+          lat: -37.092057,
+          lng: -73.154582
+        },
+        {
+          city: "Concepción",
+          commune: "Penco",
+          lat: -36.7333,
+          lng: -72.983299
+        },
+        {
+          city: "Concepción",
+          commune: "San Pedro de La Paz",
+          lat: -36.830535,
+          lng: -73.116736
+        },
+        {
+          city: "Concepción",
+          commune: "Santa Juana",
+          lat: -37.174968,
+          lng: -72.945703
+        },
+        {
+          city: "Concepción",
+          commune: "Talcahuano",
+          lat: -36.724783,
+          lng: -73.11698
+        },
+        {
+          city: "Concepción",
+          commune: "Tomé",
+          lat: -36.613156,
+          lng: -72.958859
+        },
+        {
+          city: "Concepción",
+          commune: "Hualpén",
+          lat: -36.786675,
+          lng: -73.109953
+        },
+        {
+          city: "Arauco",
+          commune: "Lebu",
+          lat: -37.609714,
+          lng: -73.648329
+        },
+        {
+          city: "Arauco",
+          commune: "Arauco",
+          lat: -37.245776,
+          lng: -73.316664
+        },
+        {
+          city: "Arauco",
+          commune: "Cañete",
+          lat: -37.80582,
+          lng: -73.391973
+        },
+        {
+          city: "Arauco",
+          commune: "Contulmo",
+          lat: -38.014926,
+          lng: -73.229287
+        },
+        {
+          city: "Arauco",
+          commune: "Curanilahue",
+          lat: -37.476243,
+          lng: -73.342124
+        },
+        {
+          city: "Arauco",
+          commune: "Los Álamos",
+          lat: -37.626123,
+          lng: -73.462266
+        },
+        {
+          city: "Arauco",
+          commune: "Tirúa",
+          lat: -38.341914,
+          lng: -73.495516
+        },
+        {
+          city: "Biobío",
+          commune: "Los Ángeles",
+          lat: -37.462915,
+          lng: -72.361225
+        },
+        {
+          city: "Biobío",
+          commune: "Antuco",
+          lat: -37.331316,
+          lng: -71.676427
+        },
+        {
+          city: "Biobío",
+          commune: "Cabrero",
+          lat: -37.033299,
+          lng: -72.399999
+        },
+        {
+          city: "Biobío",
+          commune: "Laja",
+          lat: -37.271425,
+          lng: -72.71949
+        },
+        {
+          city: "Biobío",
+          commune: "Mulchén",
+          lat: -37.717881,
+          lng: -72.237434
+        },
+        {
+          city: "Biobío",
+          commune: "Nacimiento",
+          lat: -37.505906,
+          lng: -72.673787
+        },
+        {
+          city: "Biobío",
+          commune: "Negrete",
+          lat: -37.586253,
+          lng: -72.532056
+        },
+        {
+          city: "Biobío",
+          commune: "Quilaco",
+          lat: -37.687554,
+          lng: -71.998662
+        },
+        {
+          city: "Biobío",
+          commune: "Quilleco",
+          lat: -37.474164,
+          lng: -71.98362
+        },
+        {
+          city: "Biobío",
+          commune: "San Rosendo",
+          lat: -37.26203,
+          lng: -72.723111
+        },
+        {
+          city: "Biobío",
+          commune: "Santa Bárbara",
+          lat: -37.6667,
+          lng: -72.0167
+        },
+        {
+          city: "Biobío",
+          commune: "Tucapel",
+          lat: -37.292304,
+          lng: -71.951218
+        },
+        {
+          city: "Biobío",
+          commune: "Yumbel",
+          lat: -37.0833,
+          lng: -72.566699
+        },
+        {
+          city: "Biobío",
+          commune: "Alto Biobío",
+          lat: -38.05,
+          lng: -71.316667
+        },
+        {
+          city: "Ñuble",
+          commune: "Chillán",
+          lat: -36.606261,
+          lng: -72.102335
+        },
+        {
+          city: "Ñuble",
+          commune: "Bulnes",
+          lat: -36.742159,
+          lng: -72.301771
+        },
+        {
+          city: "Ñuble",
+          commune: "Cobquecura",
+          lat: -36.138615,
+          lng: -72.794521
+        },
+        {
+          city: "Ñuble",
+          commune: "Coelemu",
+          lat: -36.4833,
+          lng: -72.699999
+        },
+        {
+          city: "Ñuble",
+          commune: "Coihueco",
+          lat: -36.629103,
+          lng: -71.832709
+        },
+        {
+          city: "Ñuble",
+          commune: "Chillán Viejo",
+          lat: -36.629103,
+          lng: -72.139796
+        },
+        {
+          city: "Ñuble",
+          commune: "El Carmen",
+          lat: -36.9,
+          lng: -72.0333
+        },
+        {
+          city: "Ñuble",
+          commune: "Ninhue",
+          lat: -36.4,
+          lng: -72.399999
+        },
+        {
+          city: "Ñuble",
+          commune: "Ñiquén",
+          lat: -36.3,
+          lng: -71.899999
+        },
+        {
+          city: "Ñuble",
+          commune: "Pemuco",
+          lat: -36.9667,
+          lng: -72.1
+        },
+        {
+          city: "Ñuble",
+          commune: "Pinto",
+          lat: -36.7,
+          lng: -71.894093
+        },
+        {
+          city: "Ñuble",
+          commune: "Portezuelo",
+          lat: -36.526772,
+          lng: -72.428213
+        },
+        {
+          city: "Ñuble",
+          commune: "Quillón",
+          lat: -36.73389,
+          lng: -72.460203
+        },
+        {
+          city: "Ñuble",
+          commune: "Quirihue",
+          lat: -36.283299,
+          lng: -72.5333
+        },
+        {
+          city: "Ñuble",
+          commune: "Ránquil",
+          lat: -36.652566,
+          lng: -72.597296
+        },
+        {
+          city: "Ñuble",
+          commune: "San Carlos",
+          lat: -36.42615,
+          lng: -71.970834
+        },
+        {
+          city: "Ñuble",
+          commune: "San Fabián",
+          lat: -36.55,
+          lng: -71.55
+        },
+        {
+          city: "Ñuble",
+          commune: "San Ignacio",
+          lat: -36.533333,
+          lng: -72.433333
+        },
+        {
+          city: "Ñuble",
+          commune: "San Nicolás",
+          lat: -36.5,
+          lng: -72.2167
+        },
+        {
+          city: "Ñuble",
+          commune: "Treguaco",
+          lat: -36.42114,
+          lng: -72.660593
+        },
+        {
+          city: "Ñuble",
+          commune: "Yungay",
+          lat: -37.122015,
+          lng: -72.013156
+        },
+        {
+          city: "Cautín",
+          commune: "Temuco",
+          lat: -38.735901,
+          lng: -72.590373
+        },
+        {
+          city: "Cautín",
+          commune: "Carahue",
+          lat: -38.708859,
+          lng: -73.167881
+        },
+        {
+          city: "Cautín",
+          commune: "Cunco",
+          lat: -38.932056,
+          lng: -72.027984
+        },
+        {
+          city: "Cautín",
+          commune: "Curarrehue",
+          lat: -39.361646,
+          lng: -71.589027
+        },
+        {
+          city: "Cautín",
+          commune: "Freire",
+          lat: -38.9573,
+          lng: -72.626928
+        },
+        {
+          city: "Cautín",
+          commune: "Galvarino",
+          lat: -38.408859,
+          lng: -72.782118
+        },
+        {
+          city: "Cautín",
+          commune: "Gorbea",
+          lat: -39.100559,
+          lng: -72.676359
+        },
+        {
+          city: "Cautín",
+          commune: "Lautaro",
+          lat: -38.508431,
+          lng: -72.454134
+        },
+        {
+          city: "Cautín",
+          commune: "Loncoche",
+          lat: -39.368119,
+          lng: -72.631512
+        },
+        {
+          city: "Cautín",
+          commune: "Melipeuco",
+          lat: -38.852306,
+          lng: -71.692942
+        },
+        {
+          city: "Cautín",
+          commune: "Nueva Imperial",
+          lat: -38.744521,
+          lng: -72.948228
+        },
+        {
+          city: "Cautín",
+          commune: "Padre Las Casas",
+          lat: -38.7667,
+          lng: -72.6
+        },
+        {
+          city: "Cautín",
+          commune: "Perquenco",
+          lat: -38.416109,
+          lng: -72.375621
+        },
+        {
+          city: "Cautín",
+          commune: "Pitrufquén",
+          lat: -38.9833,
+          lng: -72.641731
+        },
+        {
+          city: "Cautín",
+          commune: "Pucón",
+          lat: -39.272254,
+          lng: -71.977628
+        },
+        {
+          city: "Cautín",
+          commune: "Saavedra",
+          lat: -38.783299,
+          lng: -73.399999
+        },
+        {
+          city: "Cautín",
+          commune: "Teodoro Schmidt",
+          lat: -38.999184,
+          lng: -73.094296
+        },
+        {
+          city: "Cautín",
+          commune: "Toltén",
+          lat: -39.204326,
+          lng: -73.207743
+        },
+        {
+          city: "Cautín",
+          commune: "Vilcún",
+          lat: -38.667718,
+          lng: -72.22444
+        },
+        {
+          city: "Cautín",
+          commune: "Villarrica",
+          lat: -39.282012,
+          lng: -72.230779
+        },
+        {
+          city: "Cautín",
+          commune: "Cholchol",
+          lat: -38.60059,
+          lng: -72.84114
+        },
+        {
+          city: "Malleco",
+          commune: "Angol",
+          lat: -37.806073,
+          lng: -72.703804
+        },
+        {
+          city: "Malleco",
+          commune: "Collipulli",
+          lat: -37.958268,
+          lng: -72.432118
+        },
+        {
+          city: "Malleco",
+          commune: "Curacautín",
+          lat: -38.440184,
+          lng: -71.887669
+        },
+        {
+          city: "Malleco",
+          commune: "Ercilla",
+          lat: -38.055315,
+          lng: -72.383299
+        },
+        {
+          city: "Malleco",
+          commune: "Lonquimay",
+          lat: -38.454178,
+          lng: -71.369787
+        },
+        {
+          city: "Malleco",
+          commune: "Los Sauces",
+          lat: -37.979103,
+          lng: -72.834481
+        },
+        {
+          city: "Malleco",
+          commune: "Lumaco",
+          lat: -38.16402,
+          lng: -72.903184
+        },
+        {
+          city: "Malleco",
+          commune: "Purén",
+          lat: -38.032681,
+          lng: -73.071828
+        },
+        {
+          city: "Malleco",
+          commune: "Renaico",
+          lat: -37.673787,
+          lng: -72.589206
+        },
+        {
+          city: "Malleco",
+          commune: "Traiguén",
+          lat: -38.25,
+          lng: -72.6833
+        },
+        {
+          city: "Malleco",
+          commune: "Victoria",
+          lat: -38.232653,
+          lng: -72.351508
+        },
+        {
+          city: "Valdivia",
+          commune: "Valdivia",
+          lat: -39.817378,
+          lng: -73.242533
+        },
+        {
+          city: "Valdivia",
+          commune: "Corral",
+          lat: -39.888574,
+          lng: -73.431598
+        },
+        {
+          city: "Valdivia",
+          commune: "Lanco",
+          lat: -39.451019,
+          lng: -72.779616
+        },
+        {
+          city: "Valdivia",
+          commune: "Los Lagos",
+          lat: -39.862498,
+          lng: -72.818558
+        },
+        {
+          city: "Valdivia",
+          commune: "Máfil",
+          lat: -39.664897,
+          lng: -72.957157
+        },
+        {
+          city: "Valdivia",
+          commune: "Mariquina",
+          lat: -39.540279,
+          lng: -72.965651
+        },
+        {
+          city: "Valdivia",
+          commune: "Paillaco",
+          lat: -40.068427,
+          lng: -72.874841
+        },
+        {
+          city: "Valdivia",
+          commune: "Panguipulli",
+          lat: -39.643631,
+          lng: -72.336494
+        },
+        {
+          city: "Ranco",
+          commune: "La Unión",
+          lat: -40.295274,
+          lng: -73.079327
+        },
+        {
+          city: "Ranco",
+          commune: "Futrono",
+          lat: -40.124541,
+          lng: -72.380849
+        },
+        {
+          city: "Ranco",
+          commune: "Lago Ranco",
+          lat: -40.32116,
+          lng: -72.482212
+        },
+        {
+          city: "Ranco",
+          commune: "Río Bueno",
+          lat: -40.331342,
+          lng: -72.948536
+        },
+        {
+          city: "Llanquihue",
+          commune: "Puerto Montt",
+          lat: -41.468917,
+          lng: -72.941136
+        },
+        {
+          city: "Llanquihue",
+          commune: "Calbuco",
+          lat: -41.772015,
+          lng: -73.132709
+        },
+        {
+          city: "Llanquihue",
+          commune: "Cochamó",
+          lat: -41.492321,
+          lng: -72.308431
+        },
+        {
+          city: "Llanquihue",
+          commune: "Fresia",
+          lat: -41.15,
+          lng: -73.416334
+        },
+        {
+          city: "Llanquihue",
+          commune: "Frutillar",
+          lat: -41.116667,
+          lng: -73.05
+        },
+        {
+          city: "Llanquihue",
+          commune: "Los Muermos",
+          lat: -41.399409,
+          lng: -73.46499
+        },
+        {
+          city: "Llanquihue",
+          commune: "Llanquihue",
+          lat: -41.260631,
+          lng: -73.00784
+        },
+        {
+          city: "Llanquihue",
+          commune: "Maullín",
+          lat: -41.614807,
+          lng: -73.599028
+        },
+        {
+          city: "Llanquihue",
+          commune: "Puerto Varas",
+          lat: -41.3167,
+          lng: -72.983299
+        },
+        {
+          city: "Chiloé",
+          commune: "Castro",
+          lat: -42.48014,
+          lng: -73.762413
+        },
+        {
+          city: "Chiloé",
+          commune: "Ancud",
+          lat: -41.8675,
+          lng: -73.827696
+        },
+        {
+          city: "Chiloé",
+          commune: "Chonchi",
+          lat: -42.623259,
+          lng: -73.773849
+        },
+        {
+          city: "Chiloé",
+          commune: "Curaco de Vélez",
+          lat: -42.440546,
+          lng: -73.603706
+        },
+        {
+          city: "Chiloé",
+          commune: "Dalcahue",
+          lat: -42.377631,
+          lng: -73.651882
+        },
+        {
+          city: "Chiloé",
+          commune: "Puqueldón",
+          lat: -42.60144,
+          lng: -73.671484
+        },
+        {
+          city: "Chiloé",
+          commune: "Queilén",
+          lat: -42.618604,
+          lng: -73.780048
+        },
+        {
+          city: "Chiloé",
+          commune: "Quellón",
+          lat: -43.116932,
+          lng: -73.613882
+        },
+        {
+          city: "Chiloé",
+          commune: "Quemchi",
+          lat: -42.142762,
+          lng: -73.474318
+        },
+        {
+          city: "Chiloé",
+          commune: "Quinchao",
+          lat: -42.538132,
+          lng: -73.418772
+        },
+        {
+          city: "Osorno",
+          commune: "Osorno",
+          lat: -40.576189,
+          lng: -73.114946
+        },
+        {
+          city: "Osorno",
+          commune: "Puerto Octay",
+          lat: -40.976837,
+          lng: -72.881961
+        },
+        {
+          city: "Osorno",
+          commune: "Purranque",
+          lat: -40.908431,
+          lng: -73.166109
+        },
+        {
+          city: "Osorno",
+          commune: "Puyehue",
+          lat: -40.768594,
+          lng: -72.236379
+        },
+        {
+          city: "Osorno",
+          commune: "Río Negro",
+          lat: -40.783299,
+          lng: -73.233299
+        },
+        {
+          city: "Osorno",
+          commune: "San Juan de la Costa",
+          lat: -40.516667,
+          lng: -73.399999
+        },
+        {
+          city: "Osorno",
+          commune: "San Pablo",
+          lat: -40.412403,
+          lng: -73.012565
+        },
+        {
+          city: "Palena",
+          commune: "Chaitén",
+          lat: -42.9167,
+          lng: -72.7167
+        },
+        {
+          city: "Palena",
+          commune: "Futaleufú",
+          lat: -43.1833,
+          lng: -71.866699
+        },
+        {
+          city: "Palena",
+          commune: "Hualaihué",
+          lat: -42.021639,
+          lng: -72.689162
+        },
+        {
+          city: "Palena",
+          commune: "Palena",
+          lat: -43.616699,
+          lng: -71.8
+        },
+        {
+          city: "Coyhaique",
+          commune: "Coyhaique",
+          lat: -45.571225,
+          lng: -72.068265
+        },
+        {
+          city: "Coyhaique",
+          commune: "Lago Verde",
+          lat: -44.238521,
+          lng: -71.851127
+        },
+        {
+          city: "Aysén",
+          commune: "Aysén",
+          lat: -46.507608,
+          lng: -74.213379
+        },
+        {
+          city: "Aysén",
+          commune: "Cisnes",
+          lat: -44.75,
+          lng: -72.699999
+        },
+        {
+          city: "Aysén",
+          commune: "Guaitecas",
+          lat: -43.883333,
+          lng: -73.75
+        },
+        {
+          city: "Capitán Prat",
+          commune: "Cochrane",
+          lat: -47.253572,
+          lng: -72.572982
+        },
+        {
+          city: "Capitán Prat",
+          commune: "O'Higgins",
+          lat: -48.467446,
+          lng: -72.559191
+        },
+        {
+          city: "Capitán Prat",
+          commune: "Tortel",
+          lat: -47.801535,
+          lng: -73.535849
+        },
+        {
+          city: "General Carrera",
+          commune: "Chile Chico",
+          lat: -46.5409,
+          lng: -71.722279
+        },
+        {
+          city: "General Carrera",
+          commune: "Río Ibáñez",
+          lat: -46.3,
+          lng: -71.933333
+        },
+        {
+          city: "Magallanes",
+          commune: "Punta Arenas",
+          lat: -53.163832,
+          lng: -70.917068
+        },
+        {
+          city: "Magallanes",
+          commune: "Laguna Blanca",
+          lat: -52.25,
+          lng: -71.916666
+        },
+        {
+          city: "Magallanes",
+          commune: "Río Verde",
+          lat: -52.584678,
+          lng: -71.513733
+        },
+        {
+          city: "Magallanes",
+          commune: "San Gregorio",
+          lat: -52.553132,
+          lng: -70.408239
+        },
+        {
+          city: "Antártica Chilena",
+          commune: "Cabo de Hornos",
+          lat: -55.099162,
+          lng: -69.274774
+        },
+        {
+          city: "Antártica Chilena",
+          commune: "Antártica",
+          lat: -52.206431,
+          lng: -72.1685
+        },
+        {
+          city: "Tierra del Fuego",
+          commune: "Porvenir",
+          lat: -53.295799,
+          lng: -70.366654
+        },
+        {
+          city: "Tierra del Fuego",
+          commune: "Primavera",
+          lat: -52.716667,
+          lng: -69.25
+        },
+        {
+          city: "Tierra del Fuego",
+          commune: "Timaukel",
+          lat: -54.294722,
+          lng: -69.1675
+        },
+        {
+          city: "Última Esperanza",
+          commune: "Natales",
+          lat: -51.733332,
+          lng: -72.516666
+        },
+        {
+          city: "Última Esperanza",
+          commune: "Torres del Paine",
+          lat: -51.259167,
+          lng: -72.345
+        },
+        {
+          city: "Santiago",
+          commune: "Santiago",
+          lat: -33.448889,
+          lng: -70.669265
+        },
+        {
+          city: "Santiago",
+          commune: "Cerrillos",
+          lat: -33.504132,
+          lng: -70.710899
+        },
+        {
+          city: "Santiago",
+          commune: "Cerro Navia",
+          lat: -33.421659,
+          lng: -70.734688
+        },
+        {
+          city: "Santiago",
+          commune: "Conchalí",
+          lat: -33.384689,
+          lng: -70.680021
+        },
+        {
+          city: "Santiago",
+          commune: "El Bosque",
+          lat: -33.563046,
+          lng: -70.675213
+        },
+        {
+          city: "Santiago",
+          commune: "Estación Central",
+          lat: -33.459077,
+          lng: -70.699004
+        },
+        {
+          city: "Santiago",
+          commune: "Huechuraba",
+          lat: -33.374212,
+          lng: -70.636742
+        },
+        {
+          city: "Santiago",
+          commune: "Independencia",
+          lat: -33.413346,
+          lng: -70.666291
+        },
+        {
+          city: "Santiago",
+          commune: "La Cisterna",
+          lat: -33.526449,
+          lng: -70.661351
+        },
+        {
+          city: "Santiago",
+          commune: "La Florida",
+          lat: -33.522688,
+          lng: -70.598714
+        },
+        {
+          city: "Santiago",
+          commune: "La Granja",
+          lat: -33.537793,
+          lng: -70.620678
+        },
+        {
+          city: "Santiago",
+          commune: "La Pintana",
+          lat: -33.585566,
+          lng: -70.628583
+        },
+        {
+          city: "Santiago",
+          commune: "La Reina",
+          lat: -33.441126,
+          lng: -70.534059
+        },
+        {
+          city: "Santiago",
+          commune: "Las Condes",
+          lat: -33.408784,
+          lng: -70.567069
+        },
+        {
+          city: "Santiago",
+          commune: "Lo Barnechea",
+          lat: -33.352669,
+          lng: -70.518516
+        },
+        {
+          city: "Santiago",
+          commune: "Lo Espejo",
+          lat: -33.513926,
+          lng: -70.693084
+        },
+        {
+          city: "Santiago",
+          commune: "Lo Prado",
+          lat: -33.444268,
+          lng: -70.723349
+        },
+        {
+          city: "Santiago",
+          commune: "Macul",
+          lat: -33.485147,
+          lng: -70.5992
+        },
+        {
+          city: "Santiago",
+          commune: "Maipú",
+          lat: -33.520915,
+          lng: -70.763133
+        },
+        {
+          city: "Santiago",
+          commune: "Ñuñoa",
+          lat: -33.456667,
+          lng: -70.597841
+        },
+        {
+          city: "Santiago",
+          commune: "Pedro Aguirre Cerda",
+          lat: -33.49409,
+          lng: -70.676502
+        },
+        {
+          city: "Santiago",
+          commune: "Peñalolén",
+          lat: -33.471911,
+          lng: -70.562785
+        },
+        {
+          city: "Santiago",
+          commune: "Providencia",
+          lat: -33.431447,
+          lng: -70.609332
+        },
+        {
+          city: "Santiago",
+          commune: "Pudahuel",
+          lat: -33.442113,
+          lng: -70.764064
+        },
+        {
+          city: "Santiago",
+          commune: "Quilicura",
+          lat: -33.357674,
+          lng: -70.729271
+        },
+        {
+          city: "Santiago",
+          commune: "Quinta Normal",
+          lat: -33.431737,
+          lng: -70.692391
+        },
+        {
+          city: "Santiago",
+          commune: "Recoleta",
+          lat: -33.397207,
+          lng: -70.642814
+        },
+        {
+          city: "Santiago",
+          commune: "Renca",
+          lat: -33.40636,
+          lng: -70.727996
+        },
+        {
+          city: "Santiago",
+          commune: "San Joaquín",
+          lat: -33.496202,
+          lng: -70.628336
+        },
+        {
+          city: "Santiago",
+          commune: "San Miguel",
+          lat: -33.492354,
+          lng: -70.651796
+        },
+        {
+          city: "Santiago",
+          commune: "San Ramón",
+          lat: -33.538901,
+          lng: -70.642498
+        },
+        {
+          city: "Santiago",
+          commune: "Vitacura",
+          lat: -33.390521,
+          lng: -70.572412
+        },
+        {
+          city: "Cordillera",
+          commune: "Puente Alto",
+          lat: -33.618608,
+          lng: -70.590606
+        },
+        {
+          city: "Cordillera",
+          commune: "Pirque",
+          lat: -33.679344,
+          lng: -70.583106
+        },
+        {
+          city: "Cordillera",
+          commune: "San José de Maipo",
+          lat: -33.643169,
+          lng: -70.345207
+        },
+        {
+          city: "Chacabuco",
+          commune: "Colina",
+          lat: -33.204459,
+          lng: -70.67585
+        },
+        {
+          city: "Chacabuco",
+          commune: "Lampa",
+          lat: -33.282709,
+          lng: -70.879327
+        },
+        {
+          city: "Chacabuco",
+          commune: "Til Til",
+          lat: -33.138006,
+          lng: -70.917705
+        },
+        {
+          city: "Maipo",
+          commune: "San Bernardo",
+          lat: -33.60059,
+          lng: -70.706068
+        },
+        {
+          city: "Maipo",
+          commune: "Buin",
+          lat: -33.730937,
+          lng: -70.742321
+        },
+        {
+          city: "Maipo",
+          commune: "Calera de Tango",
+          lat: -33.629103,
+          lng: -70.768696
+        },
+        {
+          city: "Maipo",
+          commune: "Paine",
+          lat: -33.812565,
+          lng: -70.737596
+        },
+        {
+          city: "Melipilla",
+          commune: "Melipilla",
+          lat: -33.686158,
+          lng: -71.216683
+        },
+        {
+          city: "Melipilla",
+          commune: "Alhué",
+          lat: -34.026469,
+          lng: -71.100288
+        },
+        {
+          city: "Melipilla",
+          commune: "Curacaví",
+          lat: -33.397719,
+          lng: -71.127521
+        },
+        {
+          city: "Melipilla",
+          commune: "María Pinto",
+          lat: -33.517669,
+          lng: -71.123922
+        },
+        {
+          city: "Melipilla",
+          commune: "San Pedro",
+          lat: -33.895091,
+          lng: -71.456377
+        },
+        {
+          city: "Talagante",
+          commune: "Talagante",
+          lat: -33.663746,
+          lng: -70.927393
+        },
+        {
+          city: "Talagante",
+          commune: "El Monte",
+          lat: -33.681528,
+          lng: -70.985396
+        },
+        {
+          city: "Talagante",
+          commune: "Isla de Maipo",
+          lat: -33.746456,
+          lng: -70.899999
+        },
+        {
+          city: "Talagante",
+          commune: "Padre Hurtado",
+          lat: -33.574968,
+          lng: -70.81499
+        },
+        {
+          city: "Talagante",
+          commune: "Peñaflor",
+          lat: -33.606025,
+          lng: -70.878183
+        },
+
+      ],
+      administrativeAreaLvl4: {},
+      sendAdministrativeAreaLv3: false
+    }
+  };
+}(this));
